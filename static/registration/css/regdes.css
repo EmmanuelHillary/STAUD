@@ -1,0 +1,273 @@
+:root{
+    --blue: #0B407A;
+    --orange: #F68920;
+}
+#navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+.navbar-nav a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#hidden-link{
+    display: none;
+}
+
+.nav-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.nav-wrapper a{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    padding: 30px;
+}
+.nav-link:hover{
+    cursor: pointer;
+}
+
+.logo{
+    padding: 30px;
+}
+.logo:hover{
+    cursor: pointer;
+}
+
+.info{
+    background-color: var(--blue);
+    padding: 20px;
+    
+}
+.info h1{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    padding-left: 110px;
+    padding-right: 110px;
+    margin: 0;
+}
+
+.orders{
+    margin: 0px;
+    background-color: #FAFCFE;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+#newflex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#details{
+    width: 60%;
+}
+#secdetails{
+    width: 30%;
+
+}
+  .paras{
+      font-size: 16px;
+      font-family: Montserrat;
+      font-weight: 500;
+      width: 650px;
+      margin-top: 30px;
+  }
+  .paras1{
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 500;
+    margin-top: 30px;    
+}
+.paras1 a{
+    color: var(--orange);   
+}
+  
+  .butt{
+    padding: 10px;
+    background-color: var(--blue);
+    color: white;
+    font-family:  Montserrat;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    width: 650px;
+}
+#terms{
+    margin-left: 40px;
+}
+#horizantal-line{
+    border-bottom: 1.5px solid #0B407A;
+    margin-left: 90px;
+    margin-right: 90px;
+    padding: 30px;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+}
+.newinp{
+    width: 90%;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 13px;
+    border: 1px solid #E5E5E5;
+    font-family: Montserrat;
+    background-color: #FAFCFE;
+}
+.newinp:focus{
+    background-color: white;
+    outline: none;
+}
+.lab{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: Montserrat;
+    color: var(--blue);
+
+}
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 15px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    background-color: #E5E5E5;
+
+  }
+  .checkmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #999;
+    background: white;
+    background-image: url("../images/other-icons/Vector.png");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 9px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #E5E5E5;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: var(--blue);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  /* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .but{
+    padding: 10px;
+    background-color: var(--orange);
+    color: white;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: Montserrat;
+    border: none;
+    width: 100%;
+}
+#hidden-link{
+    display: none;
+}
+.new-container{
+    border: 1px solid #E5E5E5;
+    padding: 10px;
+}
+
+#site-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#footer-links{
+    display: flex;
+    flex-direction: row;
+}
+.link-sections{
+    padding: 30px;
+}
+.link-sections h4{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--blue);
+    padding-bottom: 10px;
+}
+.link-sections a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: #4A4A68;
+}
+
+#end-of-page{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #E5E5E5;;
+}
+#copyright{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #5E6E89;
+}
+#social-links img{
+    height: 21.6px;
+    width: 21.6px;  
+}
+#social-links a{
+    padding: 10px;
+}
+

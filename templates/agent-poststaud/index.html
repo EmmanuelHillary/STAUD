@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./assets/css/poststauddes.css" rel="stylesheet">
+        <script src="./assets/js/jquery-3.4.1.js"></script>
+        <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+        <script src="./assets/js/bootstrap.min.js"></script>
+        <link href="./assets/css/mediaquery.css" rel="stylesheet">
+        <script src="./assets/js/poststaud.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg" id="navigation">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../home/index.html"><img src="./assets/images/logo.png" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="./assets/images/hamburger.png">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-wrapper ms-auto">
+                    <a class="iconn" href="#" >Dashboard</a>
+                    <a class="iconn" href="#" >Post a Staud</a>
+                    <a class="iconn" href="#" >My Listings </a>
+                    <a class="iconn" href="#" >My Profile</a>
+                  <a class="nav-link" href="#" style="color: #0B407A;">Log out</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+         
+      <div id="main">
+        <div id="left">
+            <div id="heading">
+                <div id="hide">   
+                    <div id ="draw">
+                </div>
+            </div>
+               
+            <ul class="un-list">
+                <button ><li>Dashboard <img src="./assets/images/sidebar-images/Vector.png" style="margin-left: 30px;" class="icons"></li></button>
+                <button class="back"><li>Post a Staud <img src="./assets/images/sidebar-images/Vector (1).png"  style="margin-left: 30px;" class="icons"></li></button>
+                <button><li>My Listings <img src="./assets/images/sidebar-images/Vector (2).png"  style="margin-left: 30px;" class="icons"></li></button>
+                <button><li>My Profile <img src="./assets/images/sidebar-images/Vector (3).png"  style="margin-left: 30px;" class="icons"></li></button>
+            </ul>
+          </div>
+          </div>
+          <div id="right">
+            <div id="heading2">
+                <h2>Post a Staud</h2>
+            </div>
+            <form id="formed">
+                <div id="background">
+                <div class="newforms" data-width="auto">
+                    <label for="types">Property Title</label>
+                    <br>
+                    <input type="text" placeholder="e.g Testimony hostels" class="area">
+                </div>
+                <div id="flex1">
+                    <div class="newform" data-width="auto">
+                        <label for="types">Type</label>
+                        <br>
+                        <select  class="types" >
+                            <option value="" disabled selected>All Types</option>
+                            <option>1er</option>
+                            <option>1er</option>
+                        </select>
+                    </div>
+                    <div class="newform" data-width="auto">
+                        <label for="campus">Campus</label>
+                        <br>
+                        <select  class="types" >
+                            <option value="" disabled selected>All schools</option>
+                            <option>fdlk </option>
+                            <option>fdk lf b</option>
+                        </select>
+                    </div>
+                    <div class="newform" data-width="auto" >
+                        <label for="price">Price Range</label>
+                        <br>
+                        <select  class="types" >
+                            <option value="" disabled selected>No range</option>
+                            <option>145op</option>
+                            <option>145</option>
+                        </select>
+                    </div>
+                        <div class="newform " data-width="auto">
+                            <label for="campus">Room size</label>
+                            <br>
+                            <select class="types" id="campus" >
+                                <option value="" disabled selected>Any size</option>
+                                <option>fdlk </option>
+                                <option>fdk lf b</option>
+                            </select>
+                        </div>
+                        <div class="newform" data-width="auto">
+                            <label for="price">Toilet</label>
+                            <br>
+                            <select class="types" id="price" >
+                                <option value="" disabled selected>All options</option>
+                                <option>145op</option>
+                                <option>145</option>
+                            </select>
+                        </div>
+                        <div class="newform" data-width="auto">
+                            <label for="price">Room Size</label>
+                            <br>
+                            <select class="types" id="price" >
+                                <option value="" disabled selected>All options</option>
+                                <option>145op</option>
+                                <option>145</option>
+                            </select>
+                        </div>
+                </div>
+            </form>
+                    
+           
+            <div id="flex2">
+                <div class="newform" data-width="auto">
+                    <label for="price">Property Address</label>
+                    <br>
+                    <input type="text" placeholder="e.g Liadi Agoro streets" class="typez">
+                </div>
+                <div class="newform" data-width="auto">
+                    <label for="price">Price per annum</label>
+                    <br>
+                    <input type="text" placeholder="Enter Amount" class="typed">
+                    
+                </div>
+            </div>
+            <div id="textbox">
+                <label>Property Description</label>
+                <br>
+                <textarea placeholder="Describe your property in detail"></textarea>
+            </div>
+            <div id="secdetails">
+                <div class="lab">Select Features</div>
+                <div id="flex4">
+                <div class="checkkk">
+                <label class="container">Reliable Electricity
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+                  
+            <div class="checkkk">
+                <label class="container">Security
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+                  
+            <div class="checkkk">
+                <label class="container">All room Ensuite
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Relaxation Lounge
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Access to market
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Parking space
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Installmental payment
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Student friendly price
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk" onclick="click()">
+                <label class="container">Close to campus
+                    <input type="checkbox" >
+                    <span class="checkmark" ></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Serviced
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Cleaning Service
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Unisex
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+          
+        </div>
+        </div>
+    
+            <div id="upload">
+                <h3>Upload pictures</h3>
+                <div id="paragraph">
+                <h4><img src="./assets/images/other-icons/info.png" class="info-image">Note</h4>
+                <p>Please be informed that pictures uploaded must be well visible and of resolution 400*300 for the best fit on our system, the first image selected will be the cover picture for the property</p>
+            </div>
+                </div>
+                <form class="upload-form">
+                    <input type="file" name="file" id="file" class="inputfile" />
+
+                    <!-- The magic that makes it work -->
+                    <label for="file">
+                        <div><img src="./assets/images/other-icons/upload.png"></div>
+                        <div>Click to upload</div>
+                    </label>
+                    <br>
+                    <div id="selected-images">
+                        <div class="selected"><img src="./assets/images/hostels/1.png"></div>
+                        <div class="selected"><img src="./assets/images/hostels/2.png" ></div>
+                        <div class="selected"><img src="./assets/images/hostels/3.png"></div>
+                        <div class="selected"><img src="./assets/images/hostels/4.png"></div>
+                    </div>
+                </form>
+                <div id="searchh">
+                    <input type="submit" name="Submit" class="last">
+                </div>
+            </div>
+               
+       
+            
+            </div>
+          </div>
+      </div>
+      <section id="register">
+        <div id="reg-details">Are you a developer or agent? List your properties with us!</div>
+        <div id="reg-button"><button>Register</button></div>
+    </section>
+    
+    <div id="horizantal-line"></div>
+
+    <section id="site-details">
+        <div><img src="./assets/images/footer-logo.png" class="footer-img"></div>
+        <div id="footer-links">
+            <div class="link-sections">
+                <h4>Discovery</h4>
+                <p><a href="#">New Houses</a></p>
+                <p><a href="#">Most Searched</a></p>
+                <p><a href="#">Most Sold</a></p>
+            </div>
+            <div class="link-sections">
+                <h4>About</h4>
+                <p><a href="#">Help</a></p>
+                <p><a href="../about&faQ/index.html">FAQ's</a></p>
+                <p><a href="../companies/index.html">Partners</a></p>
+            </div>
+            <div class="link-sections">
+                <h4>Info</h4>
+                <p><a href="../contact/index.html">Contact Us</a></p>
+                <p><a href="../privacy&terms/index.html">Privacy Policy</a></p>
+                <p><a href="../privacy&terms/index.html">Terms and Conditions</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section id="end-of-page">
+        <div id="copyright">©Staud All Rights Reserved</div>
+        <div id="social-links">
+            <a href="#"><img src="./assets/images/social-links/instagram.png"></a>
+            <a href="#"><img src="./assets/images/social-links/facebook.png"></a>
+            <a href="#"><img src="./assets/images/social-links/twitter.png"></a>
+            <a href="#"><img src="./assets/images/social-links/youtube.png"></a>
+        </div>
+    </section>
+    </footer>     
+    </body>
+    </html>
+    
+    
+</html>

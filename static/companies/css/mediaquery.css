@@ -1,0 +1,291 @@
+
+@media(max-width: 1124px){
+    #navigation{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .info h1{
+        padding-left: 35px;
+        padding-right: 35px;
+        margin: 0;
+        font-size: 20px;
+    }
+    #whole{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .left{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    #search-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+    #order-button,#staudscribe input,#staud-community input{
+        width: 70%;
+    }
+    #make-order{
+        justify-content: center;
+        text-align: center;
+    }
+    #make-order h2, #staud-community h2{
+        width: 100%;
+        text-align: center
+    }
+    #staud-community p{
+        text-align: center;
+    }
+    #staud-image{
+        display: none;
+    }
+    #welcome{
+        padding: 20px;
+    }
+    #welcome h1{
+        font-size: 50px;
+    }
+    #welcome p{
+        font-size: 20px;
+    }
+    #how-it-works{
+        padding: 20px;
+    }
+    .pic-works{
+        width: 450px;
+        height: 450px;
+    }
+    #details h3{
+        font-size: 40px;
+    }
+    #details p{
+        font-size: 20px;
+    }
+    #reg-details{
+        font-size: 20px;
+    }
+    .hostel-text p{
+        text-align: center;
+    }
+  
+}
+@media (max-width: 868px) {
+    #whole{
+        padding: 10px;
+    }
+    .comps1{
+        height: 81px;
+        width: 81px;
+        
+    }
+    .comps2{
+        width: 81px;
+        height: 64px;
+    }
+    .comps3{
+        width: 81px;
+        height: 52px;
+    }
+    .comps4{
+        width: 115px;
+        height: 30px;
+    }
+    .comps5{
+        width: 115px;
+        height: 60px;
+    }
+    .hostel-images{
+        width: 250px;
+        height: 200px;
+    }
+    .hostels p{
+        font-size: 13px;
+    }
+    .hostels h4{
+        font-size: 20px;
+    }
+    #welcome h1{
+        font-size: 32px;
+    }
+    #welcome p{
+        font-size: 18px;
+    }
+    #how-it-works{
+        display: block;
+    }
+    .pic-works{
+        display: none;
+    }
+    #details h3{
+        font-size: 32px;
+    }
+    #details p{
+        font-size: 18px;
+    }
+    .footer-img, #horizantal-line{
+        display: none;
+    }
+    #site-details{
+        display: block;
+    }
+    #footer-links{
+        justify-content: center;
+        width: 100%;
+    }
+    #staudscribe input{
+        font-size: 13px;
+        padding: 7px;
+    }
+    #staud-community input{
+        font-size: 13px;
+        padding: 7px;
+    }
+    .active-number, .page-links{
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 700px){
+    .hostels{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+    }
+    .company-details{
+         padding: 10px;
+     }
+    .company-details h4{
+        padding-bottom: 10px;
+        font-family: Montserrat;
+        font-size: 14px;
+    }
+    .company-details h5{
+        padding-bottom: 10px;
+        font-family: Montserrat;
+        font-size: 14px;
+    }
+    .more-details p{
+        font-family: Montserrat;
+        font-size: 14px;
+        margin: 0;
+    }
+    #detailsandsuch{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    .view-button{
+        margin-top: 10px;
+        font-family: Montserrat;
+    }
+    .hostel-text{
+        text-align: center;
+        padding: 20px;
+    }
+    #make-order h2, #staudscribe h2, #staud-community h2{
+        font-size: 27px;
+    }
+    #make-order p, #staudscribe p, #staud-community p{
+        font-size: 16px;
+    }
+    #welcome h1{
+        font-size: 27px;
+    }
+    #welcome p{
+        font-size: 16px;
+    }
+    #details h3{
+        font-size: 27px;
+    }
+    #details p{
+        font-size: 16px;
+    }
+    .link-sections h4{
+        font-size: 20px;
+        padding-bottom: 8px;
+    }
+    .link-sections a{
+        font-size: 14px;
+    }
+    #company-flex{
+        display: flex;
+        flex-direction: column;
+    }
+    .comps1{
+        height: 121px;
+        width: 121px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .comps2{
+        width: 121px;
+        height: 84px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .comps3{
+        width: 121px;
+        height: 92px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .comps4{
+        width: 155px;
+        height: 50px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .comps5{
+        width: 155px;
+        height: 90px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
+
+   @media(max-width: 500px){
+    #whole{
+        padding: 00px;
+    }
+    #make-order, #staudscribe, #staud-community{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .link-sections{
+        padding: 15px;
+    }
+    .link-sections h4{
+        font-size: 15px;
+    }
+    .link-sections a{
+        font-size: 13px;
+    }
+    #copyright{
+        font-size: 10px;
+    }
+    #social-links img{
+        height: 15px;
+        width: 15px;  
+    }
+    #social-links a{
+        padding: 5px;
+    }
+    .image-f{
+        width: 250px;
+        height: 200px;
+        padding: 10px;
+    }
+   }
+
+   /*for special screens*/
+@media(max-width: 991px){
+    #hidden-link{
+        display: block;
+    }
+    #register{
+        display: none;
+    }
+  }

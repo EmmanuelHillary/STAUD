@@ -1,0 +1,241 @@
+
+
+:root{
+    --blue: #0B407A;
+    --orange: #F68920;
+}
+
+#navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+.navbar-nav a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#hidden-link{
+    display: none;
+}
+
+.nav-wrapper{
+    display: flex;
+    justify-content: right;
+}
+
+.nav-wrapper a{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    padding: 30px;
+}
+.nav-link:hover{
+    cursor: pointer;
+}
+.navbar-toggler:focus{
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.logo{
+    padding: 30px;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.info{
+    background-color: var(--blue);
+    padding: 20px;
+    
+}
+.info h1{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    padding-left: 110px;
+    padding-right: 110px;
+    margin: 0;
+}
+.privacy{
+    border: 1px solid #f4f4f4;
+    padding: 20px 120px 120px 120px;
+    font-family: Montserrat;
+    background-color:#ECF1F4;
+}
+#infom{
+    font-family: Montserrat;
+}
+#infom h5{
+    font-weight: 700;
+    font-size: 16px;
+}
+ol{
+    padding: 20px;
+}
+ol li{
+    margin-bottom: 20px;
+}
+.privacy h3, .terms h3{
+    padding: 10px;
+    color: var(--blue);
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Montserrat;
+}
+.terms-details{
+    padding: 10px;
+}
+
+#welcome{
+    background-image: url('../images/welcome-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 90px;
+}
+#welcome h1{
+    font-family: 'Baloo Da 2';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+    padding-bottom: 10px;
+    opacity: 1;
+}
+#welcome p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #4A4A68;
+    padding-bottom: 10px;
+    opacity: 1;
+}
+#how-it-works{
+    padding: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #FAFCFE;
+}
+.pic-works{
+    width: 560px;
+    height: 560px;
+}
+#details h3{
+    font-family: 'Baloo Da 2';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: var(--blue);
+}
+#details p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: black;
+    padding-bottom: 10px;
+}
+#register{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--blue);
+    justify-content: space-evenly;
+    padding: 25px;
+}
+#reg-details{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+#reg-button button{
+    width: 193px;
+    background-color: var(--orange);
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+#hidden-link{
+    display: none;
+}
+#horizantal-line{
+    border-bottom: 1.5px solid #0B407A;
+    margin-left: 90px;
+    margin-right: 90px;
+    padding: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+#site-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#footer-links{
+    display: flex;
+    flex-direction: row;
+}
+.link-sections{
+    padding: 30px;
+}
+.link-sections h4{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--blue);
+    padding-bottom: 10px;
+}
+.link-sections a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: #4A4A68;
+}
+
+#end-of-page{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #E5E5E5;;
+}
+#copyright{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #5E6E89;
+}
+#social-links img{
+    height: 21.6px;
+    width: 21.6px;  
+}
+#social-links a{
+    padding: 10px;
+}
+

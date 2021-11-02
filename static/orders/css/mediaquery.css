@@ -1,0 +1,274 @@
+@media(max-width: 1300px){
+    #navigation{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .info h1{
+        padding-left: 35px;
+        padding-right: 35px;
+        margin: 0;
+        font-size: 20px;
+    }
+    #welcome{
+        padding: 20px;
+    }
+    #welcome h1{
+        font-size: 50px;
+    }
+    #welcome p{
+        font-size: 20px;
+    }
+    #how-it-works{
+        padding: 20px;
+    }
+    .pic-works{
+        width: 450px;
+        height: 450px;
+    }
+    #details h3{
+        font-size: 40px;
+    }
+    #details p{
+        font-size: 20px;
+    }
+    #reg-details{
+        font-size: 20px;
+    }
+    .hostel-text p{
+        text-align: center;
+    }
+    #flex4{
+        display: none;
+    }
+    #flex1{
+        justify-content: center;
+        text-align: center;
+    }
+    #otherdits{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #flex1, #flex2, #flex3{
+        justify-content: center;
+    }
+    .newinp{
+        width: 400px;
+    }
+    textarea{
+        width: 500px;
+    }
+
+}
+@media(max-width: 868px){
+    textarea{
+        width: 450px;
+    }
+    .newinp{
+        font-size: 17px;
+    }
+    .lab{
+        font-size: 17px;
+    }
+    .container {
+        font-size: 17px;
+        padding: 12px;
+      }
+      .orders h2{
+        font-size: 25px;
+    }
+    .ordersa h2{
+        font-size: 25px;
+    }
+    #welcome h1{
+        font-size: 32px;
+    }
+    #welcome p{
+        font-size: 18px;
+    }
+    #how-it-works{
+        display: block;
+    }
+    .pic-works{
+        display: none;
+    }
+    #details h3{
+        font-size: 32px;
+    }
+    #details p{
+        font-size: 18px;
+    }
+    .footer-img, #horizantal-line{
+        display: none;
+    }
+    #site-details{
+        display: block;
+    }
+    #footer-links{
+        justify-content: center;
+        width: 100%;
+    }
+    #flex1, #flex2, #flex3{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    #otherdits{
+        margin: 0;
+    }
+   
+   .types{
+       width: 400px;
+   }
+   #oflex{
+       justify-content: center;
+       text-align: center;
+   }
+   #newflex{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       text-align: center;
+       align-items: center;
+   }
+      .but{
+       margin: 20px;
+   }
+}
+
+@media(max-width: 700px){
+
+    #welcome h1{
+        font-size: 27px;
+    }
+    #welcome p{
+        font-size: 16px;
+    }
+    #details h3{
+        font-size: 27px;
+    }
+    #details p{
+        font-size: 16px;
+    }
+    .link-sections h4{
+        font-size: 20px;
+        padding-bottom: 8px;
+    }
+    .link-sections a{
+        font-size: 14px;
+    }
+    .orders{
+        margin: 20px;
+    }
+    .ordersa{
+        margin: 20px;
+    }
+}
+
+@media(max-width: 500px){
+    .link-sections{
+        padding: 15px;
+    }
+    .orders{
+        margin: 0;
+    }
+    .ordersa{
+        margin: 0;
+    }
+    .link-sections h4{
+        font-size: 15px;
+    }
+    .link-sections a{
+        font-size: 13px;
+    }
+    #copyright{
+        font-size: 10px;
+    }
+    #social-links img{
+        height: 15px;
+        width: 15px;  
+    }
+    #social-links a{
+        padding: 5px;
+    }
+    .image-f{
+        width: 250px;
+        height: 200px;
+        padding: 10px;
+    }
+    textarea{
+        width: 250px;
+        font-size: 10px;
+    }
+    #newdrop{
+        font-size: 13px;
+    }
+    .newform{
+        font-size: 13px;
+        padding: 10px;   
+    }
+    #budget input{
+        width: 250px;
+        font-size: 13px;
+    }
+    .newform select{
+        font-size: 13px;
+    }
+    .types{
+        width: 250px;
+        font-size: 13px;
+    }
+    .orders{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .newinp{
+        width: 250px;
+        font-size: 13px;
+    }
+    .checkmark {
+        position: absolute;
+        top: 15px;
+        right: 5px;
+        height: 20px;
+        width: 20px;
+        border: 1px solid #999;
+        background: #E5E5E5;
+        background-image: url("../images/other-icons/Vector.png");
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 4px;
+      }
+    label.container{
+        width: 250px;
+        justify-content: center;
+        align-items: center;
+    }
+    #secdetails{
+        width: 100%;
+    }
+    #details{
+        width: 100%;
+    }
+    .but{
+        width: 200px;
+    }
+    .orders h2{
+        font-size: 20px;
+    }
+    .ordersa h2{
+        font-size: 20px;
+    }
+}
+
+   /*for special screens*/
+   @media(max-width: 991px){
+    #hidden-link{
+        display: block;
+    }
+    #register{
+        display: none;
+    }
+  }

@@ -1,0 +1,238 @@
+@media(max-width: 1300px){
+    #navigation{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .info h1{
+        padding-left: 35px;
+        padding-right: 35px;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    #reg-details{
+        font-size: 20px;
+    }
+    .hostel-text p{
+        text-align: center;
+    }
+    #flex4{
+        display: none;
+    }
+    #flex1{
+        justify-content: center;
+        text-align: center;
+    }
+    #otherdits{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #flex1, #flex2, #flex3{
+        justify-content: center;
+    }
+ 
+
+}
+@media(max-width: 868px){
+ 
+    .orders{
+        margin: 0px;
+        background-color: #FAFCFE;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    label.container, .new-container{
+        width: 400px;
+    }
+    #secdetails{
+        width: 100%;
+    }
+
+    .newinp, #log-in{
+        font-size: 17px;
+        width: 400px;
+    }
+    .lab{
+        font-size: 17px;
+    }
+    .container {
+        font-size: 17px;
+        padding: 12px;
+      }
+      .orders h2{
+        font-size: 25px;
+    }
+    .footer-img, #horizantal-line{
+        display: none;
+    }
+    #site-details{
+        display: block;
+    }
+    #footer-links{
+        justify-content: center;
+        width: 100%;
+    }
+    #flex1, #flex2, #flex3{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    #otherdits{
+        margin: 0;
+    }
+   
+   .types{
+       width: 400px;
+   }
+ 
+      .but{
+       margin: 20px;
+   }
+   #terms{
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       margin: 0;
+   }
+
+.butt{
+  width: 400px;
+}
+   
+}
+
+@media(max-width: 700px){
+
+    .info h1{
+        font-size: 13px;
+    }
+}
+@media(max-width: 500px){
+    .link-sections{
+        padding: 15px;
+    }
+    .paras2, .paras{
+        margin-top: 10px;
+        text-align: center;    
+    }
+    #otherdetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    #profile{
+        display: none;
+    }
+    label.container, .new-container{
+        width: 250px;
+    }
+    .butt{
+      width: 250px;
+    }
+    .orders{
+        margin: 0;
+    }
+    .ordersa{
+        margin: 0;
+    }
+    .link-sections h4{
+        font-size: 15px;
+    }
+    .link-sections a{
+        font-size: 13px;
+    }
+    #copyright{
+        font-size: 10px;
+    }
+    #social-links img{
+        height: 15px;
+        width: 15px;  
+    }
+    #social-links a{
+        padding: 5px;
+    }
+    .image-f{
+        width: 250px;
+        height: 200px;
+        padding: 10px;
+    }
+    textarea{
+        width: 250px;
+        font-size: 10px;
+    }
+    #newdrop{
+        font-size: 13px;
+    }
+    .newform{
+        font-size: 13px;
+        padding: 10px;   
+    }
+    #budget input{
+        width: 250px;
+        font-size: 13px;
+    }
+    .newform select{
+        font-size: 13px;
+    }
+    .types{
+        width: 250px;
+        font-size: 13px;
+    }
+    .orders{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .newinp, #log-in{
+        width: 300px;
+        font-size: 13px;
+    }
+    #secdetails{
+        width: 100%;
+    }
+    #details{
+        width: 100%;
+    }
+    .but{
+        width: 200px;
+    }
+    .orders h2{
+        font-size: 20px;
+    }
+    .ordersa h2{
+        font-size: 20px;
+    }
+}
+
+   /*for special screens*/
+   @media(max-width: 991px){
+    #hidden-link{
+        display: block;
+    }
+    #register{
+        display: none;
+    }
+    #newflex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+  }
+     /*for special screens*/
+     @media(max-width: 1100px){
+        #newflex{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+      }
