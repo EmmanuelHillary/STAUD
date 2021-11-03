@@ -47,7 +47,7 @@
                         <div class="newform" data-width="auto">
                             <label for="types">Type</label>
                             <br>
-                            <select class="types "  id="accommodation_type" name="type">
+                            <select class="types "  id="accommodation_type" name="accommodation_type">
                                 
                             </select>
                         </div>
@@ -100,7 +100,7 @@
                 <div>
                     <label>Comments</label>
                     <br>
-                    <textarea placeholder="Enter comments or special requirements"name="comments"></textarea>
+                    <textarea placeholder="Enter comments or special requirements"name="comment"></textarea>
                 </div>
                 <div id="budget">
                 <label>Budget</label>
@@ -127,17 +127,17 @@
                         
                         <div class="lab">I am a/an</div>
                         <label class="container">Student
-                            <input type="checkbox" value="student" class="check" checked>
+                            <input type="radio" value="student" name="occupation" class="check" checked>
                             <span class="checkmark"></span>
                         </label>
                         
                         <label class="container">Developer
-                            <input type="checkbox" value="developer" class="check">
+                            <input type="radio" value="developer" name="occupation" class="check">
                             <span class="checkmark"></span>
                         </label>
                         
                         <label class="container">Agent
-                            <input type="checkbox" value="agent" class="check">
+                            <input type="radio" value="agent" name="occupation" class="check">
                             <span class="checkmark"></span>
                         </label>
                     
@@ -260,38 +260,30 @@
                 }
                 return cookieValue;
             }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
             const csrftoken = getCookie('csrftoken');
             $("#order-form").submit(function(e){
                 e.preventDefault();
-                let occupation;
-                checkBoxes = document.querySelectorAll(".check")
-                checkBoxes.forEach((elem) => {
-                    if (elem.checked){
-                        occupation = elem.getAttribute("value")
-                    }
-                })
-                let accommodation_type = $(this).find('[name=type]').val();
-                let campus = $(this).find('[name=campus]').val();
-                let agency = $(this).find('[name=agency]').val();
-                let room_size = $(this).find('[name=room_size]').val();
-                let furnished = $(this).find('[name=furnished]').val();
-                let location = $(this).find('[name=location]').val();
-                let budget = $(this).find('[name=budget]').val();
-                let phone_number= $(this).find('[name=phone_number]').val();
-                let email = $(this).find('[name=email]').val();
-                let name = $(this).find('[name=name]').val();
-                let comment = $(this).find('[name=comments]').val();
-                let order_url = `{% url 'order:create' %}`
-                let data = {accommodation_type, campus, agency, room_size, furnished, location, budget, phone_number, email, name,
-                comment, occupation}
+                let url = `{% url 'order:create' %}`
+                let formDATA = $(this).serializeArray()
+                let data = objectifyForm(formDATA)
                 console.log(data)
-                fetch(order_url, {
+                fetch(url, {
                     method: "POST",
-                    headers: {
-                        "Content-type": "application/json",
-                        'X-CSRFToken': csrftoken,
+                    headers:{
+                        "Content-type":"application/json",
+                        "X-CSRFToken": csrftoken,
                     },
-                    body:JSON.stringify(data)
+                    body: JSON.stringify(data)
                 })
                 .then((resp) => {
                     return resp.json()
@@ -304,6 +296,8 @@
                 .catch(e =>{
                     console.log(e)
                 })
+                
+                
             })
             function staudOrder(){
                 let order_url = `{% url 'order:create' %}`
@@ -312,7 +306,7 @@
                     return resp.json()
                 })
                 .then(function(data){
-                    console.log(data)
+                    
                     populateSelect(data, 'accommodation_type')
                     populateSelect(data, 'campus') 
                     populateSelect(data, 'agency')

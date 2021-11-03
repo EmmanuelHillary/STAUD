@@ -13,7 +13,7 @@ class OrderManager(models.Manager):
 class Order(models.Model):
     name = models.CharField(max_length=256)
     email = models.EmailField(max_length=254, blank=True, null=True,)
-    budget = models.CharField(max_length=256)
+    budget = models.CharField(max_length=256, blank=True, null=True)
     phone_number = models.CharField(max_length=256, blank=True, null=True)
     comment = models.TextField(blank=True, null=True)
     occupation = models.CharField(max_length=256)
@@ -34,7 +34,3 @@ class Order(models.Model):
 
     class Meta:
         ordering = ['-created']
-    
-from django.db import models
-
-# Create your models here.
