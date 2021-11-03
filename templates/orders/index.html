@@ -115,7 +115,7 @@
                 <div id="newflex">
                     <div id="details">
                         <div class="lab">Name</div>
-                    <input type="text" placeholder="Enter Your Name" class="newinp" name="name">
+                    <input type="text" placeholder="Enter Your Name" class="newinp" name="name" required>
 
                     <div class="lab">Email Address</div>
                     <input type="email" placeholder="Enter Email Address"  class="newinp" name="email">
@@ -276,26 +276,36 @@
                 let url = `{% url 'order:create' %}`
                 let formDATA = $(this).serializeArray()
                 let data = objectifyForm(formDATA)
-                console.log(data)
-                fetch(url, {
+                $.ajax({
+                    url: url,
                     method: "POST",
-                    headers:{
-                        "Content-type":"application/json",
-                        "X-CSRFToken": csrftoken,
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then((resp) => {
-                    return resp.json()
-                })
-                .then(function(data){
-                    if (data.success){
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
                         window.location.href = `{% url 'staud:order_successful' %}`
                     }
-                 })
-                .catch(e =>{
-                    console.log(e)
-                })
+                });
+
+                // fetch(url, {
+                //     method: "POST",
+                //     headers:{
+                //         "Content-type":"application/json",
+                //         "X-CSRFToken": csrftoken,
+                //     },
+                //     body: JSON.stringify(data)
+                // })
+                // .then((resp) => {
+                //     return resp.json()
+                // })
+                // .then(function(data){
+                //     if (data.success){
+                //         window.location.href = `{% url 'staud:order_successful' %}`
+                //     }
+                //  })
+                // .catch(e =>{
+                //     console.log(e)
+                // })
                 
                 
             })
