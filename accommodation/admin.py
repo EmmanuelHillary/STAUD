@@ -8,7 +8,7 @@ class TopFeatureAdmin(admin.StackedInline):
     model = TopFeature
 
 class AccommodationAdmin(admin.ModelAdmin):
-    list_display = ['accommodation', 'accommodation_type', 'price', 'campus', 'market_status', 'created']
+    list_display = ['accommodation', 'accommodation_type', 'price', 'campus', 'market_status', 'number_of_views', 'created']
     list_filter = ['accommodation','accommodation_type', 'market_status', 'created']
     search_fields = ('accommodation', 'campus',)
     list_editable = ['market_status']

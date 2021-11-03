@@ -233,25 +233,25 @@
         <div id="horizantal-line"></div>
 
         <section id="site-details">
-            <div><img src="{% static 'companies/images/footer-logo.png' %}" class="footer-img"></div>
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
             <div id="footer-links">
                 <div class="link-sections">
                     <h4>Discovery</h4>
-                    <p><a href="#">New Hostels</a></p>
-                    <p><a href="#">Most Searched</a></p>
-                    <p><a href="#">Most Sold</a></p>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
                 </div>
                 <div class="link-sections">
                     <h4>About</h4>
-                    <p><a href="#">Help</a></p>
-                    <p><a href="#">FAQ's</a></p>
-                    <p><a href="#">Partners</a></p>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
                 </div>
                 <div class="link-sections">
                     <h4>Info</h4>
-                    <p><a href="#">Contact Us</a></p>
-                    <p><a href="#">Privacy Policy</a></p>
-                    <p><a href="#">Terms and Conditions</a></p>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
                 </div>
             </div>
         </section>

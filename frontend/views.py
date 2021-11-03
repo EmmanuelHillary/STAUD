@@ -39,4 +39,14 @@ def login(request):
 def register(request):
     return render(request, "registration/index.html")
 
+def contact_us(request):
+    return render(request, "contact/index.html")
+
+def about_FAQ(request):
+    return render(request, "about&faQ/index.html")
+
+def privacy_terms(request):
+    return render(request, "privacy&terms/index.html")
+
+
 

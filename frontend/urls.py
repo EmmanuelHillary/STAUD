@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import (home, accommodations, apartments, hostels, most_viewed,
- most_sold, company, order, order_successful, accommodation_detail, company_detail, login, register)
+ most_sold, company, order, order_successful, accommodation_detail, company_detail, login, register,
+ about_FAQ, contact_us, privacy_terms
+ )
 
 app_name = "staud"
 
@@ -18,4 +20,7 @@ urlpatterns = [
     path("company/<int:pk>/", company_detail, name="company_detail"),
     path("sign-in/", login, name="login"),
     path("register/", register, name="register"),
+    path("about-FAQ/", about_FAQ, name="about-FAQ"),
+    path("contact-us/", contact_us, name="contact-us"),
+    path("privacy-terms/", privacy_terms, name="privacy-terms"),
 ]

@@ -120,7 +120,7 @@
                         <div><img src="{% static 'hostels-view/images/other-icons/image 11.png' %}"   class="contact-pictures"></div>
                         <div id="whatsapp_num">08000000****</div>
                         </div>
-                        <div><a href="tel:+234-818-179-6905"><button id="contact-button">Request a call back</button></a></div>
+                        <div id="request-call"></div>
                    </div>
                </div>
                <div id="three">
@@ -269,25 +269,25 @@
         <div id="horizantal-line"></div>
 
         <section id="site-details">
-            <div><img src="{% static 'hostels-view/images/footer-logo.png' %}" class="footer-img"></div>
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
             <div id="footer-links">
                 <div class="link-sections">
                     <h4>Discovery</h4>
-                    <p><a href="#">New Hostels</a></p>
-                    <p><a href="#">Most Searched</a></p>
-                    <p><a href="#">Most Sold</a></p>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
                 </div>
                 <div class="link-sections">
                     <h4>About</h4>
-                    <p><a href="#">Help</a></p>
-                    <p><a href="../about&faQ/index.html">FAQ's</a></p>
-                    <p><a href="../companies/index.html">Partners</a></p>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
                 </div>
                 <div class="link-sections">
                     <h4>Info</h4>
-                    <p><a href="../contact/index.html">Contact Us</a></p>
-                    <p><a href="../privacy&terms/index.html">Privacy Policy</a></p>
-                    <p><a href="../privacy&terms/index.html">Terms and Conditions</a></p>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
                 </div>
             </div>
         </section>
@@ -345,7 +345,6 @@
             fetch(url)
             .then((resp) => resp.json())
             .then(function(data){
-                console.log(data)
                 populateSelect(data, 'accommodation_type')
                 populateSelect(data, 'campus') 
                 populateSelect(data, 'price')
@@ -390,6 +389,12 @@
                 fillInnerHtml('market_status', data.market_status)
                 fillInnerHtml('units_sold', data.units_sold)
                 fillInnerHtml('phone_num', data.agent.mobile_number)
+                let number = data.agent.mobile_number
+                let requestCall = document.getElementById('request-call')
+                requestCall.innerHTML = `
+                <a href="tel:${number}"><button id="contact-button">Request a call back</button></a>
+                `
+
                 fillInnerHtml('whatsapp_num', data.agent.whatsapp_number)
                 fillValue('agent_name', ` ${data.agent.first_name} ${data.agent.last_name}`)
                 fillValue('agent_agency', `  ${data.agent.company}`)

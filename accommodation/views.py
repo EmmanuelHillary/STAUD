@@ -107,6 +107,13 @@ class AccommodationDetailAPIView(generics.RetrieveAPIView):
     queryset = Accommodation.objects.all()
     serializer_class = AccommodationDetailSerializer
 
+    def get(self, request, *args, **kwargs):
+        obj = self.get_object()
+        obj.number_of_views += 1
+        obj.save()
+        data = AccommodationDetailSerializer(obj).data
+        return Response(data)
+
 class MostViewedStaudAPIView(APIView):
     def get(self, request, *args, **kwargs):
         qs = Accommodation.objects.all().order_by("-number_of_views")[:10]
