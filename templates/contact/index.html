@@ -43,21 +43,21 @@
                         <h1>Contact us</h1>
                       </section>
                       <section class="orders">
-                            <form>
+                            <form id="contact-form">
                                 <div id="newflex">
                 
                                     <div id="details">
                                     <div>
                                         <div class="lab">Name</div>
-                                        <div><input type="text" placeholder="Enter Username" class="newinp"></div>
+                                        <div><input type="text" placeholder="Enter Username" class="newinp" name="name"></div>
                                     </div>
                                     <div>
                                         <div class="lab">Email</div>
-                                        <div><input type="email" placeholder="Enter Email Address"  class="newinp"></div>
+                                        <div><input type="email" placeholder="Enter Email Address"  class="newinp" name="email"></div>
                                     </div>
                                     <div>
                                         <div class="lab">Message</div>
-                                        <textarea placeholder="Enter Message" ></textarea>
+                                        <textarea placeholder="Enter Message" name="message"></textarea>
                                     </div>
                                     <div>   
                                         <input type="submit" class="but" value="Send message">
@@ -105,7 +105,51 @@
                 <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
             </div>
         </section>
-        </footer>            
+        </footer> 
+        <script type="text/javascript">
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+            $("#contact-form").submit(function(e){
+                e.preventDefault();
+                let url = `{% url 'contact:contact' %}`
+                let formDATA = $(this).serializeArray()
+                let data = objectifyForm(formDATA)
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        window.location.href = `{% url 'staud:contact_successful' %}`
+                    }
+                });
+            });
+        </script>           
 
     </body>
 </html>

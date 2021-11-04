@@ -13,6 +13,7 @@ class OrderListCreateAPIView(APIView):
 
     def post(self, *args, **kwargs):
         data = self.request.data
+        print(data)
         serialized_data = OrderSerializer(data=data)
         if serialized_data.is_valid():
             serialized_data.save()

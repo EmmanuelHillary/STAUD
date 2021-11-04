@@ -42,6 +42,9 @@ def register(request):
 def contact_us(request):
     return render(request, "contact/index.html")
 
+def contact_us_successful(request):
+    return render(request, "contact/successful.html")
+
 def about_FAQ(request):
     return render(request, "about&faQ/index.html")
 

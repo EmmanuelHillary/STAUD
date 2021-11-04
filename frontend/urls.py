@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (home, accommodations, apartments, hostels, most_viewed,
  most_sold, company, order, order_successful, accommodation_detail, company_detail, login, register,
- about_FAQ, contact_us, privacy_terms
+ about_FAQ, contact_us, privacy_terms, contact_us_successful
  )
 
 app_name = "staud"
@@ -23,4 +23,5 @@ urlpatterns = [
     path("about-FAQ/", about_FAQ, name="about-FAQ"),
     path("contact-us/", contact_us, name="contact-us"),
     path("privacy-terms/", privacy_terms, name="privacy-terms"),
+    path("contact-us/successful", contact_us_successful, name="contact_successful"),
 ]
