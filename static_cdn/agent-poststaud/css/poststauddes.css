@@ -1,0 +1,503 @@
+:root{
+    --blue: #0B407A;
+    --orange: #F68920;
+}
+
+#navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 90px;
+    padding-right: 90px;
+    background-color: #ECF1F4;
+}
+.navbar-nav a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#hidden-link{
+    display: none;
+}
+
+.nav-wrapper{
+    display: flex;
+    justify-content: right;
+}
+
+.nav-wrapper a{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    padding: 30px;
+}
+.nav-link:hover{
+    cursor: pointer;
+}
+.navbar-toggler:focus{
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.logo{
+    padding: 30px;
+}
+.logo:hover{
+    cursor: pointer;
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+    
+}
+#left{
+    width: 30%;
+    height: 100vh;
+}
+#right{
+    width: 70%;
+    background-color: #FAFCFE;
+    padding: 20px;
+}
+
+.staud{
+    margin-left: 15px;
+}
+.un-list{
+    background-color: #FAFCFE;
+    height: 100vh;
+    padding-left: 150px;
+    box-shadow: 8px 0px 16px rgba(60, 119, 185, 0.14);
+}
+.iconn{
+    display: none;
+}
+.un-list button{
+    border: 1px solid #E5E5E5;
+    padding: 20px;
+    background-color: #FAFCFE;
+    width: 100%;
+    font-size: 16px;
+    font-family: Montserrat;
+    text-align: left;
+    color: var(--blue);
+}
+.un-list button:hover{
+    background-color: var(--orange);
+    color: white;
+}
+.logout:hover{
+    color: white;
+    background-color: red;
+}
+.un-list li{
+
+    text-decoration: none;
+    list-style: none;
+    margin-right: 20px;
+}
+button.back{
+    background-color: #ECF1F4;
+}
+
+#heading2 h2{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 24px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #FAFCFE;
+}
+.area{
+    width: 100%;
+    padding: 10px;
+    font-family: Montserrat;
+    border-radius: 4px;
+    border: 1px solid #ECF1F4;
+    font-size: 16px;
+    font-family: Montserrat;
+    background-color: #FAFCFE;
+  
+}
+label{
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.newforms{
+    margin-left:20px;
+    margin-right:20px;
+    padding: 10px;
+    text-align: left;
+}
+#flex1{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px;
+}
+
+#formed{
+    background-color: white;
+    box-shadow: 8px 0px 16px rgba(60, 119, 185, 0.14);
+    padding: 1px;
+}
+.newform{
+    font-size: 16px;
+    font-family: Montserrat;
+    padding: 15px;
+    text-align: left;
+}
+
+.types{
+    width: 250px;
+    font-size: 16px;
+    font-family: Montserrat;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ECF1F4;
+}
+select::-ms-expand {
+    display: none;
+  }
+  .newform select {
+    background: transparent;
+    background-image: url("../images/other-icons/down-arrow.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 50px;
+    margin: 5px 0px;
+    padding: 0px 24px;
+    font-size: 16px;
+    color: #333;
+    background-color: #FAFCFE;
+    border: 1px solid #8C8CA1;
+  }
+  .newform select:focus{
+      outline: none;
+  }
+
+.typez{
+    width: 590px;
+    font-size: 16px;
+    font-family: Montserrat;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #FAFCFE;
+    border: 1px solid #8C8CA1;
+}
+.typed{
+    width: 250x;
+    font-size: 16px;
+    font-family: Montserrat;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #FAFCFE;
+    border: 1px solid #8C8CA1;
+}
+#newsear{
+    font-size: 20px;
+    font-family: Montserrat;
+    border-radius: 30px;
+    width: 200px;
+    padding: 7.5px;
+    color: white;
+    background-color: #F68920;
+    border: none;
+}
+#thanks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+#more{
+    font-size: 15px;
+    font-family: montserrat;
+    color: white;
+    text-decoration: none;
+}
+#flex2{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#textbox{
+        font-family: Montserrat;
+        text-align: left;
+        padding: 20px;
+    }
+textarea{
+    border-radius: 4px;
+    width: 100%;
+    height: 300px;
+    background-color: #FAFCFE;
+    font-size: 16px;
+    padding: 10px;
+}
+.lab{
+    font-size: 16px;
+    margin-left: 30px;
+    font-family: Montserrat;
+    font-weight: 600;
+}
+.container {
+    display: block;
+    position: relative;
+    font-family: Montserrat;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #FAFCFE;
+  }
+
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #999;
+  }
+  .checkkk{
+      width: 265px;
+      padding: 20px;
+     
+  }
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #999;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: var(--blue);
+  }
+  
+
+  #flex4{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+  }
+  #upload{
+      margin: 20px;
+  }
+  #upload h3{
+      font-size: 16px;
+      font-family: Montserrat;
+      font-weight: 600;
+  }
+  #paragraph{
+    background-color: #ECF1F4;
+    border: 1px solid var(--orange);
+    padding: 20px;
+  }
+  .info-image{
+      padding-right: 5px;
+  }
+#upload p{
+    font-family: Montserrat;
+}
+#upload h4{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+#selected-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 10px;
+    border:  1px dashed #ECF1F4;
+}
+.selected img{
+    width: 150px; 
+    margin: 10px;
+    height: 100px;
+}
+
+
+.last{
+    padding: 10px;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+    margin: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+#searchh{
+   text-align: right;
+   justify-content: right;
+   margin-top: 20px;
+}
+#register{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--blue);
+    justify-content: space-evenly;
+    padding: 25px;
+}
+#reg-details{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+#reg-button button{
+    width: 193px;
+    background-color: var(--orange);
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+#hidden-link{
+    display: none;
+}
+#horizantal-line{
+    border-bottom: 1.5px solid #0B407A;
+    margin-left: 90px;
+    margin-right: 90px;
+    padding: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+#site-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#footer-links{
+    display: flex;
+    flex-direction: row;
+}
+.link-sections{
+    padding: 30px;
+}
+.link-sections h4{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--blue);
+    padding-bottom: 10px;
+}
+.link-sections a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: #4A4A68;
+}
+
+#end-of-page{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #E5E5E5;;
+}
+#copyright{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #5E6E89;
+}
+#social-links img{
+    height: 21.6px;
+    width: 21.6px;  
+}
+#social-links a{
+    padding: 10px;
+}
+form.upload-form{
+    border: 1px dashed var(--orange);
+    margin: 20px;
+}
+/* Styling the new label */
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--orange);
+    background-color: white;
+    display: inline-block;
+    padding: 40px;
+    width: 95%;
+    text-align: center;
+    border: 3px dashed #ECF1F4;
+    margin: 20px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #ECF1F4;
+}
+
+/* Accessibility */
+.inputfile + label {
+    cursor: pointer; /* "hand" cursor */
+}
+
+/* Keyboard Navigation */
+.inputfile:focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+/* Hiding the default input */
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
