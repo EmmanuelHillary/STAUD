@@ -48,6 +48,12 @@ def contact_us_successful(request):
 def about_FAQ(request):
     return render(request, "about&faQ/index.html")
 
+def subscribe_confirmation(request):
+    return render(request, "subscribe/confirm_email.html")
+
+def subscribe_unsubscribe(request):
+    return render(request, "subscribe/unsubscribe.html")
+
 def privacy_terms(request):
     return render(request, "privacy&terms/index.html")
 

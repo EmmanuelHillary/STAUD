@@ -120,14 +120,15 @@
 
                     <div id="make-order">
                         <h2>Can't find what you're looking for?</h2>
-                        <button id="order-button">Make an order</button>
+                        <a href="{% url 'staud:order' %}"><button id="order-button">Make an order</button></a>
                     </div>
 
                     <div id="staudscribe">
                         <h2>Get Stauscribed</h2>
                         <p>Receive email alerts about new listed properties by joining our property mailing list</p>
-                        <form>
-                            <input type="email" placeholder="Enter Email Address">
+                        <form id="subscribe">
+                            <div id="info"></div>
+                            <input type="email" placeholder="Enter Email Address" name="email" >
                             <br>
                             <input type="submit" value="Subscribe" class="staudscribe-button">
                         </form>
@@ -246,6 +247,65 @@
                 if(e.key === "Enter"){
                     $("#acc-filter").submit();
                 }
+            });
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+            $("#subscribe").submit(function(e){
+                e.preventDefault();
+                let url = `{% url 'subscribe:subscribe' %}`
+                let email = $(this).find('[name=email]').val();
+                let data = {email}
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        let info = document.getElementById("info")
+                        if(data.error){
+                                info.style.color = "red"
+                                info.innerHTML = data.error.email[0]
+                        }
+                        else{
+                            info.removeAttribute("style")
+                            info.innerHTML = `
+                            <div class="alert alert-success" role="alert">
+                                ${data.message}
+                            </div>
+                            `
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        console.log(XMLHttpRequest)
+                        console.log(textStatus)
+                        console.log(errorThrown)
+                }
+                });
             });
             const paginationDiv = document.querySelector(".pagination-results")
 

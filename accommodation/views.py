@@ -40,7 +40,7 @@ class AccommodationsAPIView(APIView):
         furnished = [request.GET.get('furnished')] or None
         if furnished == ['All Options']:
             furnished = ['Yes', 'No']
-        if address is None:
+        if address is None or address == "null":
             qs=Accommodation.objects.filter(
                 Q(accommodation_type__in=acc_type) &
                 Q(campus__name__in=campus) &
@@ -58,6 +58,7 @@ class AccommodationsAPIView(APIView):
                 p
                 ).distinct()
         
+        print(qs)
         date = Accommodation.objects.all().order_by("-updated").first().created
         accommodation = AccommodationAPISerializer(qs, many=True)
         data = { 

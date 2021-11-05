@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (home, accommodations, apartments, hostels, most_viewed,
  most_sold, company, order, order_successful, accommodation_detail, company_detail, login, register,
- about_FAQ, contact_us, privacy_terms, contact_us_successful
+ about_FAQ, contact_us, privacy_terms, contact_us_successful, subscribe_confirmation,
+ subscribe_unsubscribe
  )
 
 app_name = "staud"
@@ -15,7 +16,7 @@ urlpatterns = [
     path("most-sold/", most_sold, name="most-sold"),
     path("companies/", company, name="company"),
     path("order/", order, name="order"),
-    path("order/successful", order_successful, name="order_successful"),
+    path("order/successful/", order_successful, name="order_successful"),
     path("accommodation/<int:pk>/", accommodation_detail, name="accommodation_detail"),
     path("company/<int:pk>/", company_detail, name="company_detail"),
     path("sign-in/", login, name="login"),
@@ -23,5 +24,7 @@ urlpatterns = [
     path("about-FAQ/", about_FAQ, name="about-FAQ"),
     path("contact-us/", contact_us, name="contact-us"),
     path("privacy-terms/", privacy_terms, name="privacy-terms"),
-    path("contact-us/successful", contact_us_successful, name="contact_successful"),
+    path("contact-us/successful/", contact_us_successful, name="contact_successful"),
+    path("subscribe/confirmation/", subscribe_confirmation, name="subscribe_confirmation"),
+    path("unsubscribe/", subscribe_unsubscribe, name="subscribe_unsubscribe"),
 ]

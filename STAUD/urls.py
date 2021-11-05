@@ -26,6 +26,7 @@ urlpatterns = [
     path('staud/api/v1/company/', include("company.urls")),
     path('staud/api/v1/order/', include("order.urls")),
     path('staud/api/v1/contact/', include("contact.urls")),
+    path('staud/api/v1/subscribe/', include("subscribe.urls")),
     path('', include("frontend.urls")),
 ]
 

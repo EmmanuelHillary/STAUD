@@ -12,13 +12,13 @@ def unsubscribe_email(email):
     message.attach_alternative(html_template, 'text/html')
     message.send()
 
-def subscribe_email(email):
+def subscribe_email(email, conf_number):
     subject=f'Thank You For Stauscribing!'
     body=f"Welcome to STAUD ..accommodation made easy.., if you would like to unsubscribe visit http://127.0.0.1:8000/stauscribe/unsubscribe/{email}"
     from_email=settings.EMAIL_HOST_USER
     recipient_list=[email]
     message = EmailMultiAlternatives(subject=subject, body=body, from_email=from_email, to=recipient_list)
-    html_template = get_template('subscribe\subscribe_email.html').render(context={'email': email})
+    html_template = get_template('subscribe\subscribe_email.html').render(context={'email': email, "conf_number": conf_number})
     message.attach_alternative(html_template, 'text/html')
     message.send()
 

@@ -262,3 +262,24 @@
     padding: 10px;
 }
 
+.hostel-button{
+    padding: 10px;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    width: 193px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+.hostel-button a{
+    color: white;
+    text-decoration: none;
+}
+.hostel-button a:hover{
+    color: var(--orange);
+}
+

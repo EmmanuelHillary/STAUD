@@ -280,7 +280,7 @@
                     url: url,
                     method: "POST",
                     headers:{"X-CSRFToken": csrftoken},
-                    data: JSON.stringify(data),
+                    data: data,
                     dataType: 'json',
                     success: function (data) {
                         window.location.href = `{% url 'staud:order_successful' %}`

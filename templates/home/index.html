@@ -27,9 +27,10 @@
                 <div class="close">  
                     <button id="close-button">&times;</button>
                 </div>
-                <form>
+                <form id="subscribe">
                     <div id="details">
-                        <div><input  type="email" placeholder="Enter Email Address" class="eaddress"></div>
+                        <div  id="info"></div>
+                        <div><input  type="email" placeholder="Enter Email Address" class="eaddress" name="email"></div>
                         <div><input  type="submit" value="Subscribe" class="submit"></div>
                     </div>
                 </form>
@@ -229,6 +230,65 @@
             }
         });
         
+        function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+            $("#subscribe").submit(function(e){
+                e.preventDefault();
+                let url = `{% url 'subscribe:subscribe' %}`
+                let email = $(this).find('[name=email]').val();
+                let data = {email}
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        let info = document.getElementById("info")
+                        if(data.error){
+                                info.style.color = "red"
+                                info.innerHTML = data.error.email[0]
+                        }
+                        else{
+                            info.removeAttribute("style")
+                            info.innerHTML = `
+                            <div class="alert alert-success" role="alert">
+                                ${data.message}
+                            </div>
+                            `
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        console.log(XMLHttpRequest)
+                        console.log(textStatus)
+                        console.log(errorThrown)
+                }
+                });
+            });
 
         function populateSelect(data, value){
             for(let i of data[`${value}`]){
