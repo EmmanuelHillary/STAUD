@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>STAUD ● Accommodations</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'hostels/css/hosteldes.css' %}" rel="stylesheet">
+        <link href="{% static 'hostels/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'hostels/javascript/hostel.js' %}"></script>
+        <script src="{% static 'hostels/javascript/jquery-3.4.1.js' %}"></script>
+        <link href="{% static 'hostels/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'hostels/javascript/bootstrap.min.js' %}"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg" id="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="{% static 'home/images/hamburger.png' %}">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-wrapper ms-auto">
+                    <a class="nav-link active" href="{% url 'staud:apartments' %}">Houses</a>
+                    <a class="nav-link" href="{% url 'staud:hostels' %}">Hostels</a>
+                    <a class="nav-link" href="{% url 'staud:company' %}">Companies</a>
+                    <a class="nav-link" href="{% url 'staud:order' %}">Orders</a>
+                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="{% url 'staud:login' %}" style="color: #0B407A;">Sign In</a>
+                    <a class="nav-link" href="{% url 'staud:register' %}" style="color: #F68920;" id="hidden-link">Register</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+     
+        <section class="info">
+            <h1>Houses</h1>
+        </section>
+        <section id="whole">
+        <section class=" left">
+            <div class="box" id="box-info">
+                
+            </div>
+            <div class="results" id="results-info">
+                
+            </div>
+            <div id="hostel-results">
+                
+                
+            </div>
+            <div class="pagination-results">
+                <!-- <a href="#" id="left-page" class="page-links">❮</a>
+                <a href="#" class="active-number">1</a>
+                <a href="#" class="page-links">2</a>
+                <a href="#" id="truncated" class="page-links">. . .</a>
+                <a href="#" class="page-links">4</a>
+                <a href="#" class="page-links">5</a>
+                <a href="#" id="truncated" class="page-links">. . .</a>
+                <a href="#" class="page-links">7</a>
+                <a href="#" id="right-page" class="page-links">❯</a> -->
+            </div>
+        </section>
+
+        <section class=" right">
+            <div id="background">
+                <div id="search">
+                    <div id="search-head"> Staud Filters</div>
+                    <form id="acc-filter">
+                        <div id="search-container">
+                            <div class="newform">
+                                <label for="types">Type</label>
+                                <br>
+                                <select  class="types" id="accommodation_type" name="type">
+                                    
+                                </select>
+                            </div>
+
+                            <div class="newform">
+                                <label for="campus">Campus</label>
+                                <br>
+                                <select  class="types" id="campus" name="campus">
+                                    
+                                    
+                                </select>
+                            </div>
+            
+                            <div class="newform">
+                                <label for="price">Price Range</label>
+                                <br>
+                                <select  class="types" id="price" name="price">
+                                    
+                                </select>
+                            </div>
+
+                            <div class="newform">
+                                <label for="price">Room Size</label>
+                                <br>
+                                <select  class="types" id="room_size" name="room_size">
+                                    
+                                </select>
+                            </div>
+
+                            <div class="newform">
+                                <label for="price">Furnished</label>
+                                <br>
+                                <select  class="types" id="furnished" name="furnished">
+                                    
+                                </select>
+                            </div>
+                           
+                            
+                        </div>
+                    </form>
+                        </div>
+                    </div>
+
+                    <div id="make-order">
+                        <h2>Can't find what you're looking for?</h2>
+                        <a href="{% url 'staud:order' %}"><button id="order-button">Make an order</button></a>
+                    </div>
+
+                    <div id="staudscribe">
+                        <h2>Get Stauscribed</h2>
+                        <p>Receive email alerts about new listed properties by joining our property mailing list</p>
+                        <form id="subscribe">
+                            <div id="info"></div>
+                            <input type="email" placeholder="Enter Email Address" name="email">
+                            <br>
+                            <input type="submit" value="Subscribe" class="staudscribe-button">
+                        </form>
+                    </div>
+
+                    <div id="staud-image">
+                        <img src="{% static 'hostels/images/New message-pana 1.png' %}" width="450px" height="300px">
+                    </div>
+
+                    <div id="staud-community">
+                        <h2>Join the Staud community</h2>
+                        <p>Join the blog community if you want to become one of the bloggers writing about everything that has to do with accommodation off-school. From gists to student reviews and all sorts, keep in mind though, you have to have your own Staud to join</p>
+                        <form>
+                            <input type="text" placeholder="Enter Name">
+                            <br>
+                            <input type="email" placeholder="Enter Email Address">
+                            <br>
+                            <input type="text" placeholder="Campus">
+                            <br>
+                            <input type="number" placeholder="Enter Phone Number">
+                            <br>
+                            <input type="submit" value="Join community" class="staudscribe-button">
+                        </form>
+                    </div>
+                </section>
+        </section>
+
+        <section id="welcome">
+            <h1>Staud welcome</h1>
+            <p>Staud is a digital real estate product focused on university students, it is simply the solution to every students' accommodation needs.</p>
+            <p>We understand the headache that <strong>YOU</strong> go through, finding the best place to live for the school session, being exposed to fraud or scams and your dissatisfaction on renting a home.</p>
+            <p>We are here to bring an <strong>END</strong> to that, to offer you the <strong>BEST</strong> secure deals, all in one place!</p>
+        </section>
+
+        <section id="how-it-works">
+            <div id="details">
+                <h3>How staud works</h3>
+                <p><a style="color: #F68920;">GetStaud.com</a> helps you find the home you need for school without stress or worry.</p>
+                <p>Step1: Visit GetStaud.com </p>
+                <p>Step2: Search for your dream home</p>
+                <p>Step3: Contact agent for inspection</p>
+                <p>Step4: Pay and move into your Staud</p>
+            </div>
+            <div id="pic-details">
+                <img src="{% static 'hostels/images/how-it-works.png' %}" class="pic-works">
+            </div>
+        </section>
+
+        <section id="register">
+            <div id="reg-details">Are you a developer or agent? List your properties with us!</div>
+            <div id="reg-button"><a href="{% url 'staud:register' %}"><button>Register</button></a></div>
+        </section>
+        
+        <div id="horizantal-line"></div>
+
+        <section id="site-details">
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+            <div id="footer-links">
+                <div class="link-sections">
+                    <h4>Discovery</h4>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>About</h4>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>Info</h4>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <section id="end-of-page">
+            <div id="copyright">©Staud All Rights Reserved</div>
+            <div id="social-links">
+                <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+            </div>
+        </section>
+        </footer>
+        <script src="{% static 'hostels/javascript/accommodation.js' %}"></script>
+        <script type="text/javascript">
+            let staudlist;
+            let accommodations;
+            let totalPages;
+            $("#acc-filter").submit(function(e){
+                e.preventDefault();
+                let type = $(this).find('[name=type]').val();
+                let campus = $(this).find('[name=campus]').val();
+                let price = $(this).find('[name=price]').val();
+                let room_size = $(this).find('[name=room_size]').val();
+                let furnished = $(this).find('[name=furnished]').val();
+                let url = `{% url 'staud:accommodations' %}?&type=${type}&campus=${campus}&price=${price}&room_size=${room_size}&furnished=${furnished}`
+                window.location.href = url
+            })
+            document.body.addEventListener("keypress", (e) =>{
+                if(e.key === "Enter"){
+                    $("#acc-filter").submit();
+                }
+            });
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+            $("#subscribe").submit(function(e){
+                e.preventDefault();
+                let url = `{% url 'subscribe:subscribe' %}`
+                let email = $(this).find('[name=email]').val();
+                let data = {email}
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        let info = document.getElementById("info")
+                        if(data.error){
+                                info.style.color = "red"
+                                info.innerHTML = data.error.email[0]
+                        }
+                        else{
+                            info.removeAttribute("style")
+                            info.innerHTML = `
+                            <div class="alert alert-success" role="alert">
+                                ${data.message}
+                            </div>
+                            `
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        console.log(XMLHttpRequest)
+                        console.log(textStatus)
+                        console.log(errorThrown)
+                }
+                });
+            });
+            const paginationDiv = document.querySelector(".pagination-results")
+
+            function element(totalPages, page){
+                let aTag = '';
+                let activeATag;
+                let beforePages = page - 1;
+                let afterPages = page + 1;
+                if(page > 1){
+                    aTag += `<a href="#" id="left-page" onclick="element(totalPages, ${page-1})" value="${page-1}" class="page-links page">❮</a>`;
+                }
+                if(page > 2){
+                    aTag += `<a href="#" onclick="element(totalPages, 1)" value="${1}"  class="page-links page">1</a>`
+                    if(page >3){
+                        aTag += `<a href="#" id="truncated" class="page-links">. . .</a>`
+                    }
+                }
+
+                if (totalPages !== 3){
+                    if(page == totalPages){
+                    beforePages = beforePages - 2
+                    }else if(page == totalPages - 1){
+                        beforePages = beforePages - 1
+                    }
+                
+                    if(page == 1){
+                        afterPages = afterPages + 2
+                    }else if(page == 2){
+                        afterPages = afterPages + 1 
+                    }
+                }
+ 
+                for(let pageLength = beforePages; pageLength <= afterPages; pageLength++){
+                    if(pageLength > totalPages){
+                        continue
+                    }
+                    if(pageLength === 0){
+                        pageLength += 1
+                    }
+                    if(pageLength < 0){
+                        continue
+                    }
+                    if (pageLength === page){
+                        activeATag = "active-number"
+                    }
+                    else{
+                        activeATag = ""
+                    }
+                    aTag += `<a href="#" onclick="element(totalPages, ${pageLength})" value="${pageLength}"  class="page-links ${activeATag} page">${pageLength}</a>`;
+                }
+                if(page < totalPages - 1 ){
+                    if(page < totalPages -2){
+                        aTag += `<a href="#" id="truncated" class="page-links">. . .</a>`
+                    }
+                    aTag += `<a href="#" onclick="element(totalPages, ${totalPages})" value="${totalPages}"  class="page-links page">${totalPages}</a>`
+                }
+                if(page < totalPages){
+                    aTag += `<a href="#" id="right-page" onclick="element(totalPages, ${page+1})" value="${page+1}" class="page-links page">❯</a>`;
+                }
+                document.querySelector("#results-info").innerHTML = `Page ${page} of ${staudlist.length}`
+                staudAccommodationsHtml(staudlist, page-1, accommodations)
+                paginationDiv.innerHTML = aTag;
+            }
+            function populateSelect(data, value){
+            for(let i of data[`${value}`]){
+                var newSelect = document.createElement('option');
+                selectHTML = "<option value='" + i + "'>" + i + "</option>";
+                newSelect.innerHTML = selectHTML;
+                document.getElementById(`${value}`).add(newSelect);
+                }
+            }
+
+            function sliceIntoChunks(arr, chunkSize) {
+                const res = [];
+                for (let i = 0; i < arr.length; i += chunkSize) {
+                    const chunk = arr.slice(i, i + chunkSize);
+                    res.push(chunk);
+                }
+                return res;
+            }
+
+            function staudAccommodationsHtml (array, N, parentDiv){
+                let listHTML = '';
+                for (let i of array[N]){ 
+                        let accommodationItem = `
+                        <div class="hostels">
+                            <div><img src="${i.display_picture}"  class="hostel-images"></div>
+                            <div class="hostel-text">
+                                <p><strong>${i.name}</strong></p>
+                                <p><strong>${i.address}</strong> </p>
+                                <p>${i.short_desc.replace(/\n/g, "<br />")}</p>
+                                <button class="hostel-button" onclick="accommodationDetail(${i.id})">View Staud</button>
+                            </div>
+                        </div>
+                        `
+                        listHTML += accommodationItem
+                    }
+                    parentDiv.innerHTML = listHTML
+            }
+            
+            function accommodationDetail(pk){
+            url = `{% url 'staud:accommodation_detail' pk=12345 %}`.replace(/12345/, pk.toString());
+            window.location.href = url
+            }
+
+            function staudAccommodations(){
+                let staud_url = `{% url 'accommodation:apartment' %}`
+                fetch(staud_url)
+                .then((resp) => {
+                    return resp.json()
+                })
+                .then(function(data){ 
+                    populateSelect(data, 'accommodation_type')
+                    populateSelect(data, 'campus') 
+                    populateSelect(data, 'price')
+                    populateSelect(data, 'room_size') 
+                    populateSelect(data, 'furnished')
+                    document.querySelector("#box-info").innerHTML = `
+                        There are a total of ${data.accommodation.length} listings as at ${data.update}. The properties have been updated by estate agents which you can contact from their information given  in the property description of each listing
+                        `
+                    accommodations = document.getElementById("hostel-results")
+                    if (data.accommodation.length === 0){
+                        document.querySelector(".pagination-results").innerHTML = ''
+                        document.querySelector("#hostel-results").innerHTML = `<h1>None</h1>`
+                    }
+                    else{
+                        let N = 0
+                        staudlist = sliceIntoChunks(data.accommodation, 5)
+                        totalPages = staudlist.length
+                        element(totalPages, 1)
+                        document.querySelector("#results-info").innerHTML = `Page ${N+1} of ${staudlist.length}`
+                        staudAccommodationsHtml(staudlist, N, accommodations)
+                    }
+                    })
+            }
+            staudAccommodations();
+        </script>
+    </body>
+
+</html>

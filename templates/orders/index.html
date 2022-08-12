@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>STAUD ● order</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'orders/css/orderdes.css' %}" rel="stylesheet">
+        <link href="{% static 'orders/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'orders/javascript/order.js' %}"></script>
+        <script src="{% static 'orders/javascript/jquery-3.4.1.js' %}"></script>
+        <link href="{% static 'orders/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'orders/javascript/bootstrap.min.js' %}"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            .bd-example-modal-lg .modal-dialog{
+                display: table;
+                position: relative;
+                margin: 0 auto;
+                top: calc(50% - 24px);
+            }
+
+            .bd-example-modal-lg .modal-dialog .modal-content{
+                background-color: transparent;
+                border: none;
+            }
+        </style>
+        <div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content" style="width: 48px">
+                    <span class="fa fa-spinner fa-spin fa-3x" style="color: #F68920;"></span>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg" id="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="{% static 'orders/images/hamburger.png' %}">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-wrapper ms-auto">
+                    <a class="nav-link active" href="{% url 'staud:apartments' %}">Houses</a>
+                    <a class="nav-link" href="{% url 'staud:hostels' %}">Hostels</a>
+                    <a class="nav-link" href="{% url 'staud:company' %}">Companies</a>
+                    <a class="nav-link" href="{% url 'staud:order' %}">Orders</a>
+                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="{% url 'staud:login' %}" style="color: #0B407A;">Sign In</a>
+                    <a class="nav-link" href="{% url 'staud:register' %}" style="color: #F68920;" id="hidden-link">Register</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+        <div class="info">
+            <h1> Order</h1>
+        </div>
+        <form id="order-form">
+            <div class="orders">
+            <h2> Order Details</h2>
+            <div id="oflex">
+                <div id="flex1">
+                        <div class="newform" data-width="auto">
+                            <label for="types">Type</label>
+                            <br>
+                            <select class="types "  id="accommodation_type" name="accommodation_type">
+                                
+                            </select>
+                        </div>
+                        <div class="newform" data-width="auto">
+                            <label for="campus">Campus</label>
+                            <br>
+                            <select class="types" id="campus" name="campus">
+                                
+                            </select>
+                        </div>
+                    </div>
+                        <div id="flex2">
+                        <div class="newform" data-width="auto">
+                            <label for="price">Room Size</label>
+                            <br>
+                            <select class="types" id="room_size" name="room_size">
+                                
+                            </select>
+                        </div>
+
+                        <div class="newform" data-width="auto">
+                            <label for="campus">Agency Listing</label>
+                            <br>
+                            <select class="types"  id="agency" name="agency">
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div id="flex3">
+                        <div class="newform" data-width="auto">
+                            <label for="price">Furnished</label>
+                            <br>
+                            <select class="types" id="furnished" name="furnished">
+                                
+                            </select>
+                        </div>
+                            <div class="newform" data-width="auto">
+                                <label for="price">Location</label>
+                                <br>
+                                <select class="types" id="location" name="location" >
+                                    <option value="Any Location" selected>Select a campus</option>
+                                </select>
+                        </div>
+                </div>
+                <div id="flex4">
+                    <img src="{% static 'orders/images/1.png' %}" width="300px" height="300px">
+                </div>
+            </div>
+            <div id="otherdits">
+                <div>
+                    <label>Comments</label>
+                    <br>
+                    <textarea placeholder="Enter comments or special requirements"name="comment"></textarea>
+                </div>
+                <div id="budget">
+                <label>Budget</label>
+                <br>
+                    <input type="text" placeholder="Enter Amount" name="budget">
+                </div>
+            </div>
+            
+            </div>
+            <div class="ordersa">
+                <h2> Personal Details</h2>
+                <div id="newflex">
+                    <div id="details">
+                        <div class="lab">Name</div>
+                    <input type="text" placeholder="Enter Your Name" class="newinp" name="name" required>
+
+                    <div class="lab">Email Address</div>
+                    <input type="email" placeholder="Enter Email Address"  class="newinp" name="email">
+
+                    <div class="lab">Phone Number</div>
+                    <input type="tel" placeholder="Enter Phone Number"  class="newinp" name="phone_number">
+                    </div>
+                    <div id="secdetails">
+                        
+                        <div class="lab">I am a/an</div>
+                        <label class="container">Student
+                            <input type="radio" value="student" name="occupation" class="check" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        
+                        <label class="container">Developer
+                            <input type="radio" value="developer" name="occupation" class="check">
+                            <span class="checkmark"></span>
+                        </label>
+                        
+                        <label class="container">Agent
+                            <input type="radio" value="agent" name="occupation" class="check">
+                            <span class="checkmark"></span>
+                        </label>
+                    
+                        <button class="but" type="submit">Make Order</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </form>
+        <section id="welcome">
+            <h1>Staud welcome</h1>
+            <p>Staud is a digital real estate product focused on university students, it is simply the solution to every students' accommodation needs.</p>
+            <p>We understand the headache that <strong>YOU</strong> go through, finding the best place to live for the school session, being exposed to fraud or scams and your dissatisfaction on renting a home.</p>
+            <p>We are here to bring an <strong>END</strong> to that, to offer you the <strong>BEST</strong> secure deals, all in one place!</p>
+        </section>
+
+        <section id="how-it-works">
+            <div id="details">
+                <h3>How staud works</h3>
+                <p><a style="color: #F68920;">GetStaud.com</a> helps you find the home you need for school without stress or worry.</p>
+                <p>Step1: Visit GetStaud.com </p>
+                <p>Step2: Search for your dream home</p>
+                <p>Step3: Contact agent for inspection</p>
+                <p>Step4: Pay and move into your Staud</p>
+            </div>
+            <div id="pic-details">
+                <img src="{% static 'hostels/images/how-it-works.png' %}" class="pic-works">
+            </div>
+        </section>
+
+        <section id="register">
+            <div id="reg-details">Are you a developer or agent? List your properties with us!</div>
+            <div id="reg-button"><a href="{% url 'staud:register' %}"><button>Register</button></a></div>
+        </section>
+        
+        <div id="horizantal-line"></div>
+
+        <section id="site-details">
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+            <div id="footer-links">
+                <div class="link-sections">
+                    <h4>Discovery</h4>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>About</h4>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>Info</h4>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <section id="end-of-page">
+            <div id="copyright">©Staud All Rights Reserved</div>
+            <div id="social-links">
+                <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+            </div>
+        </section>
+        </footer>            
+        <script type="text/javascript">
+            let locations;
+            function modal(){
+            $('.modal').modal('show');
+            }
+            $(".check").change(function() {
+                $(".check").prop('checked', false);
+                $(this).prop('checked', true);
+            });
+            function populateSelect(data, value){
+            for(let i of data[`${value}`]){
+                var newSelect = document.createElement('option');
+                selectHTML = "<option value='" + i + "'>" + i + "</option>";
+                newSelect.innerHTML = selectHTML;
+                document.getElementById(`${value}`).add(newSelect);
+                }
+            }
+            $('#campus').change(function() {populateLocation(this)});
+            function populateLocation(event) {
+                campu = $("#campus option:selected").text();
+                if (campu == "All Schools"){
+                    $("#location").empty();
+                    $("#location").append('<option value="Any Location" selected>Select a Campus</option>');
+                }
+                else{
+                    $("#location").empty();
+                    for (let [l, location] of Object.entries(locations)) {
+                        if (l == campu) {
+                            //alert(b);
+                            for (loca in location) {
+                                $('#location')
+                                    .append($("<option></option>")
+                                        .attr("value", location[loca])
+                                        .text(location[loca]));
+                            }
+                        }
+                    }
+                }
+            }
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+            $("#order-form").submit(function(e){
+                e.preventDefault();
+                modal()
+                let url = `{% url 'order:create' %}`
+                let formDATA = $(this).serializeArray()
+                let data = objectifyForm(formDATA)
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        window.location.href = `{% url 'staud:order_successful' %}`
+                        $('.modal').modal('hide');
+                    }
+                });
+                
+                
+            })
+            function staudOrder(){
+                let order_url = `{% url 'order:create' %}`
+                fetch(order_url)
+                .then((resp) => {
+                    return resp.json()
+                })
+                .then(function(data){
+                    
+                    populateSelect(data, 'accommodation_type')
+                    populateSelect(data, 'campus') 
+                    populateSelect(data, 'agency')
+                    populateSelect(data, 'room_size') 
+                    populateSelect(data, 'furnished')
+                    locations = data.location
+                })
+            }
+            staudOrder()
+        </script>
+    </body>
+</html>

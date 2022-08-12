@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>STAUD ● Privacy & Terms</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{% static 'privacy&terms/js/jquery-3.4.1.js' %}"></script>
+        <link href="{% static 'privacy&terms/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'privacy&terms/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <link href="{% static 'privacy&terms/css/p&tdes.css' %}" rel="stylesheet">
+        <link href="{% static 'privacy&terms/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'privacy&terms/js/p&t.js' %}"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <section id="main">
+                      <nav class="navbar navbar-expand-lg" id="navigation">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                              <img src="{% static 'home/images/hamburger.png' %}">
+                            </button>
+                          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav nav-wrapper ms-auto">
+                                <a class="nav-link active" href="{% url 'staud:apartments' %}">Houses</a>
+                                <a class="nav-link" href="{% url 'staud:hostels' %}">Hostels</a>
+                                <a class="nav-link" href="{% url 'staud:company' %}">Companies</a>
+                                <a class="nav-link" href="{% url 'staud:order' %}">Orders</a>
+                                <a class="nav-link" href="#">Blog</a>
+                                <a class="nav-link" href="{% url 'staud:login' %}" style="color: #0B407A;">Sign In</a>
+                                <a class="nav-link" href="{% url 'staud:register' %}" style="color: #F68920;" id="hidden-link">Register</a>
+                              </div>
+                          </div>
+                        </div>
+                      </nav>
+                      <section class="info">
+                        <h1>Privacy policy and terms of use</h1>
+                      </section>
+
+                      <section class="privacy">
+                          <h3>Privacy policy</h3>
+                            <ol class="list">
+                                <li>All communications from us will provide a clear hyperlink where you can reverse your permission or deregister. If you have any problem with this process please call +234 8183622283 for assistance.</li>
+                                <li>We intend using any personal or organizational particulars you submit to us via email, telephone, or the submission forms on this site only to respond to any specific request for information you have made on the site, and, will not use this information in any other way or disclose it to any third party without your express written consent, unless forced to do so by law</li>
+                                <li>If we offer or supply a service to you that is provided on our behalf by a third party we may have to pass your Information to them in order to deliver the service. By using this site you consent to us providing your Information to the third parties licensed by us to provide such services. We may also use third parties to provide services on our behalf which may include processing (but not using themselves) your Information. In any case, we will not pass your data to anyone who is not also registered with the Data Protection Act or is not subject to these or similar provisions in our contract with them, and we will not allow the third party to use your Information commercially without your consent.</li>
+                                <li>As a result of your electronic or other communication with us, we may request permission to send electronic messages or other communications of a commercial nature to you, permission that must be explicitly granted by you before we will send such communications. We may also use this information to compile profiles for statistical purposes and use such profiles in the course of our business, but these profiles or statistical data will never be able to be linked to your specific profile and contact details by any third party.</li>
+                                <li>Like many websites, we use "cookies" to enable us to personalize your visits to this website, simplify the signing-in procedure, keep track of your preferences and to track the usage of this website. Cookies are small pieces of information that are stored in the hard drive of your computer by your browser. Your browser will have the option to prevent websites using cookies, but please note that this may reduce the functionality of this Site and other websites.</li>
+                            </ol>
+                            <div id="infom">
+                                <h5>INFORMATION WE COLLECT</h5>
+                                <p>When you use the Services you will have the option to provide us with personal information, such as your email address, your phone number and other important information while registering, so that we may keep you informed. We use this information only in response to your requests and to provide the Services.
+                                 When visiting our website, we may place one or more cookies (a small file that is stored by your browser to recognize you and store your preferences) on your computer. This helps us to improve our Services by personalizing information you may want. You may adjust the settings on your browser to refuse cookies but some of the Services may not work if you do so. We may also log information from your computer including the existence of cookies, your IP address and information about your browser program in order to allow us to diagnose problems, administer and track your usage of the Services</p>
+                            </div>
+                         </div>
+                 
+                         <div class="terms">
+                             <h3>Terms of Use</h3>
+                         </div>
+                         <div class="terms-details">
+                            <h5 style="font-weight: 600;">RESTRICTIONS ON USE</h5>
+                            <ol class="list">
+                                <li>You agree not to transmit any material designed to interrupt, damage, destroy or limit the functionality of our website or the Services</li>
+                                <li>You agree not to use any automated software to view the Services without consent and to only access our Services manually.</li>
+                                <li>You agree not to use the Services other than for your own personal use or as an agent listing properties for sale and to rent</li>
+                                <li>You agree not to attempt to copy our data or reverse engineer our processes without our consent.</li>
+                                <li>You agree not to use our Services in any manner that is illegal, immoral or harmful to us.</li>
+                                <li>You agree not to use our Services in breach of any policy or other notice on our website.</li>
+                                <li>You agree not to remove or alter any copyright notices that appear on our website.</li>
+                                <li>You agree not to publish any material that may encourage a breach of any relevant laws or regulations.</li>
+                                <li>You agree not to interfere with any other user's enjoyment of our website or the Services.</li>
+                                <li>	You agree not to transmit materials protected by copyright without the permission of the owner.</li>
+                                <li>You agree not to conduct yourself in an offensive or abusive manner whilst using our website or the Services.</li>
+                                <li>You agree not to attempt to bypass restrictions on user accounts.</li>
+                            </ol>
+                            <div id="infom">
+                             <h5>REGISTRATION AND SECURITY</h5>
+                           <p>You must be over eighteen years of age to register on our website and must ensure that the details provided by you on registration are true, accurate, current and complete. It is your responsibility to update and inform us of any changes to the details provided on registration. Although certain parts of our website may be used by anyone who visits without requiring registration, some of the Services require you to register in order to enable us to verify your identity.
+                             By registering with the service, you agree that we can send you emails about your account, other Staud services and occasional third party offers.
+                             When registering, you will be asked to create a password and will be responsible for maintaining the confidentiality of your password and restricting access to your computer, as you will be accountable for any activities conducted under your password. If you believe that someone has accessed your account without authorisation, please contact us immediately.
+                             </p>
+                 
+                             <h5>ADVERTISING ON THE WEBSITE</h5>
+                             <p>Property adverts/listings placed on our website must contain details of only one property in Nigeria per advert/listing. We reserve the right to either split adverts/listings that breach this term into single property adverts/listings or disable such adverts/listings.</p>
+                 
+                             <h5>CHARGES AND PAYMENTS</h5>
+                             <p>All charges and payments for services on Nigeria Property Centre are non-refundable.</p>
+                 
+                             <h5>INDEMNIFICATION</h5>
+                             <p>You agree to indemnify, defend and hold us and our affiliated companies, shareholders, officers, directors, employees, agents or suppliers harmless from any and all claims or demands, made by any third party due to or arising out of your use of the Services, the violation of these Terms of Use by you, or the infringement by you of any intellectual property or other right of any other person or entity.</p>
+                 
+                             <h5>CHANGES TO TERMS OF USE</h5>
+                             <p>We reserve the right in our sole discretion to change these Terms of Use at any time without prior notice to you. Any changes will be posted on our website and become effective at the time of posting. Your continued use of the Services after the effective date of such changes will constitute acceptance of and agreement to any such changes. We reserve the right to modify, suspend or discontinue all or part of the Services at any time to you and/or others, with or without notice. We shall not be liable to you or any other party should we exercise our right to modify, suspend or discontinue all or part of the Services.</p>
+                 
+                             <h5>APPLICABLE LAW</h5>
+                             <p>These Terms of Use shall be governed by and construed in accordance with Nigerian law and the parties agree that any disputes will be settled in Nigerian courts. Should any provision of these Terms of Use be determined to be invalid or unenforceable by any court having competent jurisdiction, then the invalid or unenforceable provision will be replaced with a provision that reflects the intent of the original provision, to the extent permitted by applicable law and all other provisions of these Terms of Use shall remain in full force and effect.</p>
+                 
+                             <h5>GENERAL</h5>
+                             <p>The headings in these Terms of Use are solely used for convenience and have no legal or contractual significance. We may assign this Agreement, in whole or in part, at any time without notice to you and upon such assignment will be relieved of any further obligation under these Terms of Use. You may not assign, transfer or sublicense your rights, if any, under these Terms of Use. Our delay or failure to exercise or enforce any right or provision of these Terms of Use with respect to a breach by you or others shall not constitute or be construed as a waiver of such right to act. We shall not be responsible for any breach of these Terms of Use caused by circumstances beyond our control.
+                                 These Terms of Use together with the Privacy Policy constitute the entire agreement between you and us with respect to the Services and supersede any and all prior agreements and understandings between you and us.
+                                 If you have any questions or comments about our Terms of Use, please Contact us.</p>
+                         </div>
+                         
+                      </section>
+
+        <section id="welcome">
+            <h1>Staud welcome</h1>
+            <p>Staud is a digital real estate product focused on university students, it is simply the solution to every students' accommodation needs.</p>
+            <p>We understand the headache that <strong>YOU</strong> go through, finding the best place to live for the school session, being exposed to fraud or scams and your dissatisfaction on renting a home.</p>
+            <p>We are here to bring an <strong>END</strong> to that, to offer you the <strong>BEST</strong> secure deals, all in one place!</p>
+        </section>
+
+        <section id="how-it-works">
+            <div id="details">
+                <h3>How staud works</h3>
+                <p><a style="color: #F68920;">GetStaud.com</a> helps you find the home you need for school without stress or worry.</p>
+                <p>Step1: Visit GetStaud.com </p>
+                <p>Step2: Search for your dream home</p>
+                <p>Step3: Contact agent for inspection</p>
+                <p>Step4: Pay and move into your Staud</p>
+            </div>
+            <div id="pic-details">
+                <img src="{% static 'home/images/how-it-works.png' %}" class="pic-works">
+            </div>
+        </section>
+
+        <section id="register">
+            <div id="reg-details">Are you a developer or agent? List your properties with us!</div>
+            <div id="reg-button"><a href="{% url 'staud:register' %}"><button>Register</button></a></div>
+        </section>
+        
+        <div id="horizantal-line"></div>
+
+        <section id="site-details">
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+            <div id="footer-links">
+                <div class="link-sections">
+                    <h4>Discovery</h4>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>About</h4>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>Info</h4>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <section id="end-of-page">
+            <div id="copyright">©Staud All Rights Reserved</div>
+            <div id="social-links">
+                <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+            </div>
+        </section>
+        </footer>            
+
+    </body>
+</html>

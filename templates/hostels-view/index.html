@@ -1,0 +1,481 @@
+ <!DOCTYPE html>
+ {% load static %}
+<html>
+    <head>
+        <title>STAUD ● Accommodation detail</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'hostels-view/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'hostels-view/javascript/bootstrap.min.js' %}"></script>
+        <link href="{% static 'hostels-view/css/hostel-viewdes.css' %}" rel="stylesheet">
+        <link href="{% static 'hostels-view/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'hostels-view/javascript/hostel-view.js' %}"></script>
+        <script src="{% static 'hostels-view/javascript/jquery-3.4.1.js' %}"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <style>
+            
+        </style>
+        <nav class="navbar navbar-expand-lg" id="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="{% static 'home/images/hamburger.png' %}">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-wrapper ms-auto">
+                    <a class="nav-link active" href="{% url 'staud:apartments' %}">Houses</a>
+                    <a class="nav-link" href="{% url 'staud:hostels' %}">Hostels</a>
+                    <a class="nav-link" href="{% url 'staud:company' %}">Companies</a>
+                    <a class="nav-link" href="{% url 'staud:order' %}">Orders</a>
+                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="{% url 'staud:login' %}" style="color: #0B407A;">Sign In</a>
+                    <a class="nav-link" href="{% url 'staud:register' %}" style="color: #F68920;" id="hidden-link">Register</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+     
+        <section class="info" id="desc">
+            
+        </section>
+        <section id="whole">
+        <section class=" left">
+                <div class="box">
+                    <div class="graphs" id="short_desc">
+                    
+                </div>
+            </div>
+            <div id="">
+                <div id="display" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" id="carousel">
+                        
+                    </div>
+                    <a class="carousel-control-prev" href="#display" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#display" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only"></span>
+                    </a>
+                </div>
+            </div>
+               <div id="small-container">
+                   
+               </div>
+               <div id="full-description">
+                   <div id="textbox">
+                       <h3>Full Description</h3>
+                       <textarea id="full_description"></textarea>
+                   </div>
+                   <div class="table-responsive" id="fulltable">
+                       <h3 id="tablehead">Staud Details</h3>
+                       <table class="table">
+                        <tr>
+                        <td class="blue-cell">Date Added</td>
+                        <td id="created"></td>
+                     </tr>
+                     <tr>
+                         <td class="blue-cell">Date Updated</td>
+                         <td id="updated"></td>
+                      </tr>
+                      <tr>
+                         <td class="blue-cell">Staud ID</td>
+                         <td id="staud_id"></td>
+                      </tr>
+                      <tr>
+                         <td class="blue-cell">Type</td>
+                         <td id="acc_type"></td>
+                      </tr>
+                      <tr>
+                         <td class="blue-cell">Market Status</td>
+                         <td id="market_status"></td>
+                      </tr>
+                      <tr>
+                         <td class="blue-cell">Unit Sold</td>
+                         <td id="units_sold"></td>
+                      </tr>
+                    </table>
+                </div>
+               </div>
+               <div id="features">
+                   <div id="one">
+                    <h3>Top Features</h3>
+                    <ul id="top_features" style="list-style-image: url('{% static 'hostels-view/images/other-icons/Vector.png' %}');">
+                       
+                    </ul>
+                   </div>
+                   <div id="two">
+                    <h3>Contact Agent</h3>
+                    <div class="contact">
+                    <div><img src="{% static 'hostels-view/images/other-icons/image 10.png' %}"  class="contact-pictures"></div>
+                    <div id="phone_num">08000000****</div>
+                    </div>
+                    <div class="contact">
+                        <div><img src="{% static 'hostels-view/images/other-icons/image 11.png' %}"   class="contact-pictures"></div>
+                        <div id="whatsapp_num">08000000****</div>
+                        </div>
+                        <div id="request-call"></div>
+                   </div>
+               </div>
+               <div id="three">
+                <h3>Agent Profile</h3>
+                <div id="agent-profile">
+                    <div id="agent-picture"></div>
+                    <div id="agent-info">
+                        <div class="detailed-info">
+                            <div>Agent Name:</div>
+                            <div><input type="text" id="agent_name" value="" disabled></div>
+                         </div>
+                        <div class="detailed-info">
+                            <div>Ratings: </div>
+                            <div><img src="{% static 'hostels-view/images/ratings/8.png' %}" width="300px" id="ratings"></div>
+                         </div>
+                        <div class="detailed-info">
+                            <div>Staud Agency: </div>
+                            <div><input type="text" id="agent_agency" value="" disabled></div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class=" right">
+            <div id="background">
+                <div id="search">
+                    <div id="search-head"> Staud Filters</div>
+                    <form id="acc-filter">
+                        <div id="search-container">
+                            <div class="newform">
+                                <label for="types">Type</label>
+                                <br>
+                                <select  class="types" id="accommodation_type" name="type">
+                                    
+                                </select>
+                            </div>
+
+                            <div class="newform">
+                                <label for="campus">Campus</label>
+                                <br>
+                                <select  class="types" id="campus" name="campus">
+                                    
+                                    
+                                </select>
+                            </div>
+            
+                            <div class="newform">
+                                <label for="price">Price Range</label>
+                                <br>
+                                <select  class="types" id="price" name="price">
+                                    
+                                </select>
+                            </div>
+
+                            <div class="newform">
+                                <label for="price">Room Size</label>
+                                <br>
+                                <select  class="types" id="room_size" name="room_size">
+                                    
+                                </select>
+                            </div>
+
+                            <div class="newform">
+                                <label for="price">Furnished</label>
+                                <br>
+                                <select  class="types" id="furnished" name="furnished">
+                                    
+                                </select>
+                            </div>
+                           
+                            
+                        </div>
+                    </form>
+                        </div>
+                    </div>
+
+                          <div id="make-order">
+                        <h2>Share this property</h2>
+                        <div id="firstsocial-links">
+                            
+                            <a href="#"><img src="{% static 'hostels-view/images/social-links/image 10.png' %}"></a>
+                            <a href="#"><img src="{% static 'hostels-view/images/social-links/image 11.png' %}"></a>
+                            <a href="#"><img src="{% static 'hostels-view/images/social-links/image 12.png' %}"></a>
+                        </div>
+                    </div>
+
+                    <div id="staudscribe">
+                        <h2>Get Stauscribed</h2>
+                        <p>Receive email alerts about new listed properties by joining our property mailing list</p>
+                        <form id="subscribe">
+                            <div id="info"></div>
+                            <input type="email" placeholder="Enter Email Address" name="email">
+                            <br>
+                            <input type="submit" value="Subscribe" class="staudscribe-button">
+                        </form>
+                    </div>
+
+                    <div id="staud-image">
+                        <img src="{% static 'hostels-view/images/New message-pana 1.png' %}" width="450px" height="300px">
+                    </div>
+
+                    <div id="staud-community">
+                        <h2>Join the Staud community</h2>
+                        <p>Join the blog community if you want to become one of the bloggers writing about everything that has to do with accommodation off-school. From gists to student reviews and all sorts, keep in mind though, you have to have your own Staud to join</p>
+                        <form>
+                            <input type="text" placeholder="Enter Name">
+                            <br>
+                            <input type="email" placeholder="Enter Email Address">
+                            <br>
+                            <input type="text" placeholder="Campus">
+                            <br>
+                            <input type="number" placeholder="Enter Phone Number">
+                            <br>
+                            <input type="submit" value="Join community" class="staudscribe-button">
+                        </form>
+                    </div>
+                </section>
+        </section>
+
+        <section id="welcome">
+            <h1>Staud welcome</h1>
+            <p>Staud is a digital real estate product focused on university students, it is simply the solution to every students' accommodation needs.</p>
+            <p>We understand the headache that <strong>YOU</strong> go through, finding the best place to live for the school session, being exposed to fraud or scams and your dissatisfaction on renting a home.</p>
+            <p>We are here to bring an <strong>END</strong> to that, to offer you the <strong>BEST</strong> secure deals, all in one place!</p>
+        </section>
+
+        <section id="how-it-works">
+            <div id="details">
+                <h3>How staud works</h3>
+                <p><a style="color: #F68920;">GetStaud.com</a> helps you find the home you need for school without stress or worry.</p>
+                <p>Step1: Visit GetStaud.com </p>
+                <p>Step2: Search for your dream home</p>
+                <p>Step3: Contact agent for inspection</p>
+                <p>Step4: Pay and move into your Staud</p>
+            </div>
+            <div id="pic-details">
+                <img src="{% static 'hostels-view/images/how-it-works.png' %}" class="pic-works">
+            </div>
+        </section>
+
+        <section id="register">
+            <div id="reg-details">Are you a developer or agent? List your properties with us!</div>
+            <div id="reg-button"><a href="{% url 'staud:register' %}"><button>Register</button></a></div>
+        </section>
+        
+        <div id="horizantal-line"></div>
+
+        <section id="site-details">
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+            <div id="footer-links">
+                <div class="link-sections">
+                    <h4>Discovery</h4>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>About</h4>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>Info</h4>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <section id="end-of-page">
+            <div id="copyright">©Staud All Rights Reserved</div>
+            <div id="social-links">
+                <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+            </div>
+        </section>
+        </footer>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>         
+        <script type="text/javascript">
+        let pageUrl = window.location.href
+        var pk = pageUrl.match(/\/accommodation\/(\d+)\//)[1];
+        $("#acc-filter").submit(function(e){
+                e.preventDefault();
+                let type = $(this).find('[name=type]').val();
+                let campus = $(this).find('[name=campus]').val();
+                let price = $(this).find('[name=price]').val();
+                let room_size = $(this).find('[name=room_size]').val();
+                let furnished = $(this).find('[name=furnished]').val(); 
+                let url = `{% url 'staud:accommodations' %}?&type=${type}&campus=${campus}&price=${price}&room_size=${room_size}&furnished=${furnished}`
+                window.location.href = url
+            })
+            document.body.addEventListener("keypress", (e) =>{
+                if(e.key === "Enter"){
+                    $("#acc-filter").submit();
+                }
+            });
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+            $("#subscribe").submit(function(e){
+                e.preventDefault();
+                let url = `{% url 'subscribe:subscribe' %}`
+                let email = $(this).find('[name=email]').val();
+                let data = {email}
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        let info = document.getElementById("info")
+                        if(data.error){
+                                info.style.color = "red"
+                                info.innerHTML = data.error.email[0]
+                        }
+                        else{
+                            info.removeAttribute("style")
+                            info.innerHTML = `
+                            <div class="alert alert-success" role="alert">
+                                ${data.message}
+                            </div>
+                            `
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        console.log(XMLHttpRequest)
+                        console.log(textStatus)
+                        console.log(errorThrown)
+                }
+                });
+            });
+        function populateSelect(data, value){
+            for(let i of data[`${value}`]){
+                var newSelect = document.createElement('option');
+                selectHTML = "<option value='" + i + "'>" + i + "</option>";
+                newSelect.innerHTML = selectHTML;
+                document.getElementById(`${value}`).add(newSelect);
+                }
+            }
+        function fillInnerHtml(id, text){
+            element = document.getElementById(id)
+            element.innerHTML = text
+        }
+        function fillValue(id, text){
+            element = document.getElementById(id)
+            element.setAttribute("value", text)
+        }
+        function staudDetail(){
+            url = `{% url 'accommodation:detail' pk=12345 %}`.replace(/12345/, pk.toString());
+            fetch(url)
+            .then((resp) => resp.json())
+            .then(function(data){
+                populateSelect(data, 'accommodation_type')
+                populateSelect(data, 'campus') 
+                populateSelect(data, 'price')
+                populateSelect(data, 'room_size') 
+                populateSelect(data, 'furnished')
+                let desc = document.getElementById("desc")
+                desc.innerHTML = `<h1>${data.acc_type} - ${data.name}</h1>`
+
+                let short_desc = document.getElementById("short_desc")
+                short_desc.innerHTML = data.short_desc.replace(/\n/g, "<br />")
+
+                let carousel = document.getElementById("carousel")
+                for (let i = 0; i < data.images.length; i++){
+                    if (i === 0){
+                        carousel.innerHTML += `
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="${data.images[i]}" alt="">
+                        </div>
+                    `
+                    }
+                    else{
+                        carousel.innerHTML += `
+                        <div class="carousel-item" >
+                            <img class="d-block w-100" src="${data.images[i]}" alt="">
+                        </div>
+                        `
+                    }
+                }
+
+                let images = document.getElementById("small-container")
+                for (let i = 0; i < data.images.length; i++){
+                    images.innerHTML += `
+                    <div> <img src="${data.images[i]}" class="smaller-images"></div>
+                    `
+                }
+
+                fillInnerHtml('full_description', data.full_description)
+                fillInnerHtml('created', data.created)
+                fillInnerHtml('updated', data.updated)
+                fillInnerHtml('staud_id', data.staud_id)
+                fillInnerHtml('acc_type', data.acc_type)
+                fillInnerHtml('market_status', data.market_status)
+                fillInnerHtml('units_sold', data.units_sold)
+                fillInnerHtml('phone_num', data.agent.mobile_number)
+                let number = data.agent.mobile_number
+                let requestCall = document.getElementById('request-call')
+                requestCall.innerHTML = `
+                <a href="tel:${number}"><button id="contact-button">Request a call back</button></a>
+                `
+
+                fillInnerHtml('whatsapp_num', data.agent.whatsapp_number)
+                fillValue('agent_name', ` ${data.agent.first_name} ${data.agent.last_name}`)
+                fillValue('agent_agency', `  ${data.agent.company}`)
+
+                top_features = document.getElementById('top_features')
+                for (let i = 0; i < data.top_features.length; i++){
+                    top_features.innerHTML += `
+                    <li>${data.top_features[i]}</li>
+                    `
+                }
+
+                let agent_picture = document.getElementById("agent-picture")
+                agent_picture.innerHTML = `
+                <img src="${data.agent.display_picture}" width="170px" height="160px">
+                `
+
+            })
+        }
+        staudDetail()
+        
+        </script>
+    </body>
+
+</html>

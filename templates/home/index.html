@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+    <head>
+        <title>STAUD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'home/css/homedes.css' %}" rel="stylesheet">
+        <link href="{% static 'home/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'home/js/homej.js' %}"></script>
+        <script src="{% static 'home/js/jquery-3.4.1.js' %}"></script>
+        <link href="{% static 'home/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section id="popup">
+            <div>
+                <img src="{% static 'home/images/popup.png' %}" class="pop-picture">
+            </div>
+            <div id="subscribe">     
+                <h2>Get Staud-scribed</h2>
+                <p>Recieve Email alerts about newly listed properties, staud gists and news by signing up to our mailing list</p>
+                <div class="close">  
+                    <button id="close-button">&times;</button>
+                </div>
+                <form id="subscribe">
+                    <div id="details">
+                        <div  id="info"></div>
+                        <div><input  type="email" placeholder="Enter Email Address" class="eaddress" name="email"></div>
+                        <div><input  type="submit" value="Subscribe" class="submit"></div>
+                    </div>
+                </form>
+               
+            </div>
+
+        </section>
+
+        <section id="main">
+            <nav class="navbar navbar-expand-lg" id="navigation">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <img src="{% static 'home/images/hamburger.png' %}">
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav nav-wrapper ms-auto">
+                    <a class="nav-link active" href="{% url 'staud:apartments' %}">Houses</a>
+                    <a class="nav-link" href="{% url 'staud:hostels' %}">Hostels</a>
+                    <a class="nav-link" href="{% url 'staud:company' %}">Companies</a>
+                    <a class="nav-link" href="{% url 'staud:order' %}">Orders</a>
+                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="{% url 'staud:login' %}" style="color: #0B407A;">Sign In</a>
+                    <a class="nav-link" href="{% url 'staud:register' %}" style="color: #F68920;" id="hidden-link">Register</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+  <div id="background">
+      <div class="search-box">
+          <h2>Find your dream home... in school</h2>
+          <form id="search-form">
+            <div class="input-area">
+                <span><img src="{% static 'home/images/other-icons/search.png' %}"></span>
+                <input type="text" placeholder="Search" class="search-area" name="search">
+            </div>
+            <br>
+            <div class="options">
+
+                <div class="newform">
+                    <label for="types">Type</label>
+                    <br>
+                    <select  class="types" id="accommodation_type" name="type">
+                    </select>
+                </div>
+
+                <div class="newform">
+                    <label for="campus">Campus</label>
+                    <br>
+                    <select  class="types" id="campus" name="campus">
+                    </select>
+                </div>
+
+                <div class="newform">
+                    <label for="price">Price Range</label>
+                    <br>
+                    <select  class="types" id="price" name="price">
+                    </select>
+                </div>
+            </div>
+            <input type="text" name="room_size" style="display: none;" value="Any Size">
+            <input type="text" name ="furnished" style="display: none;" value="All Options">
+        </form>
+              </div>
+        
+</section>
+
+        <section id="partners">
+            <div class="part-text">
+                <h2>Partners</h2>
+                <p>We work with only the best</p>
+            </div>
+            <div id="companies">
+                <div><img src="{% static 'home/images/companies/1.png' %}" class="comps1"></div>
+                <div><img src="{% static 'home/images/companies/2.png' %}" class="comps2"></div>
+                <div><img src="{% static 'home/images/companies/3.png' %}" class="comps3"></div>
+                <div><img src="{% static 'home/images/companies/4.png' %}" class="comps4"></div>
+                <div><img src="{% static 'home/images/companies/5.png' %}" class="comps5"></div>
+            </div>
+        </section>   
+        
+        <section id="featured">
+            <h2>Featured homes</h2> 
+            <div id="featured-container">
+                
+            </div>
+        </section>
+        <div id="shuffle"> <button id="nextpage">More Deals</button></div>
+
+        <section id="welcome">
+            <h1>Staud welcome</h1>
+            <p>Staud is a digital real estate product focused on university students, it is simply the solution to every students' accommodation needs.</p>
+            <p>We understand the headache that <strong>YOU</strong> go through, finding the best place to live for the school session, being exposed to fraud or scams and your dissatisfaction on renting a home.</p>
+            <p>We are here to bring an <strong>END</strong> to that, to offer you the <strong>BEST</strong> secure deals, all in one place!</p>
+        </section>
+
+        <section id="how-it-works">
+            <div id="details">
+                <h3>How staud works</h3>
+                <p><a style="color: #F68920;">GetStaud.com</a> helps you find the home you need for school without stress or worry.</p>
+                <p>Step1: Visit GetStaud.com </p>
+                <p>Step2: Search for your dream home</p>
+                <p>Step3: Contact agent for inspection</p>
+                <p>Step4: Pay and move into your Staud</p>
+            </div>
+            <div id="pic-details">
+                <img src="{% static 'home/images/how-it-works.png' %}" class="pic-works">
+            </div>
+        </section>
+
+        <section id="register">
+            <div id="reg-details">Are you a developer or agent? List your properties with us!</div>
+            <div id="reg-button"><a href="{% url 'staud:register' %}"><button>Register</button></a></div>
+        </section>
+        
+        <div id="horizantal-line"></div>
+
+        <section id="site-details">
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+            <div id="footer-links">
+                <div class="link-sections">
+                    <h4>Discovery</h4>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>About</h4>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>Info</h4>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <section id="end-of-page">
+            <div id="copyright">©Staud All Rights Reserved</div>
+            <div id="social-links">
+                <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+            </div>
+            </section>
+        </footer>
+
+        <script>
+        $(window).on("load", function(){
+            setTimeout(function() {
+            $("#popup").fadeIn(2000);
+            $('#popup').css("display", "flex");
+            $('#subscribe').css("background", "white");
+            }, 10000);
+
+        });
+
+        $('.close').on("click", function(){
+        setTimeout(function(){
+            $('.search-box').fadeTo(10, 1, function(){
+            $('.search-box').css("visibility", "visible")
+        }) 
+            }) 
+        });
+
+        $('.close').click(function(){
+            $('#popup').fadeOut();
+        });
+
+        $('#more').click(function(){
+            $('#flex2').css("display", "flex");
+            $('#more').css("visibility", "hidden");
+            return false;
+        });
+        $("#search-form").submit(function(e){
+            e.preventDefault();
+            let search = $(this).find('[name=search]').val();
+            let type = $(this).find('[name=type]').val();
+            let campus = $(this).find('[name=campus]').val();
+            let price = $(this).find('[name=price]').val();
+            let room_size = $(this).find('[name=room_size]').val();
+            let furnished = $(this).find('[name=furnished]').val();
+            let url = `{% url 'staud:accommodations' %}?address=${search}&type=${type}&campus=${campus}&price=${price}&room_size=${room_size}&furnished=${furnished}`
+            window.location.href = url
+        })
+        let form = document.getElementById("search-form")
+        document.body.addEventListener("keypress", (e) =>{
+            if(e.key === "Enter"){
+                $("#search-form").submit();
+            }
+        });
+        
+        function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+            $("#subscribe").submit(function(e){
+                e.preventDefault();
+                let url = `{% url 'subscribe:subscribe' %}`
+                let email = $(this).find('[name=email]').val();
+                let data = {email}
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        let info = document.getElementById("info")
+                        if(data.error){
+                                info.style.color = "red"
+                                info.innerHTML = data.error.email[0]
+                        }
+                        else{
+                            info.removeAttribute("style")
+                            info.innerHTML = `
+                            <div class="alert alert-success" role="alert">
+                                ${data.message}
+                            </div>
+                            `
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        console.log(XMLHttpRequest)
+                        console.log(textStatus)
+                        console.log(errorThrown)
+                }
+                });
+            });
+
+        function populateSelect(data, value){
+            for(let i of data[`${value}`]){
+                var newSelect = document.createElement('option');
+                selectHTML = "<option value='" + i + "'>" + i + "</option>";
+                newSelect.innerHTML = selectHTML;
+                document.getElementById(`${value}`).add(newSelect);
+            }
+        }
+
+        function sliceIntoChunks(arr, chunkSize) {
+            const res = [];
+            for (let i = 0; i < arr.length; i += chunkSize) {
+                const chunk = arr.slice(i, i + chunkSize);
+                res.push(chunk);
+            }
+            return res;
+        }
+
+        function featuredStaudHtml (array, N, parentDiv){
+            for (let i of array[N]){ 
+                    let featuredItem = `
+                            <div class="featured-items">
+                            <div class="featured-image">
+                                <img src="${i.display_picture}" class="image-f">
+                            </div>
+                            <div class="featured-info" >
+                                    <p><strong>${i.name}</strong></p>
+                                    <p><strong>${i.address}</strong> </p>
+                                    <p>${i.short_desc.replace(/\n/g, "<br />")}</p>
+                                <button class="hostel-button" onclick="accommodationDetail(${i.id})"><a>View More</a></button>
+                            </div>
+                        </div>
+                    `
+                    parentDiv.innerHTML += featuredItem
+                }
+        }
+        function featuredSTDHtml (array, N){
+            let html = ''
+            for (let i of array[N]){ 
+                    let featuredItem = `
+                            <div class="featured-items">
+                            <div class="featured-image">
+                                <img src="${i.display_picture}" class="image-f">
+                            </div>
+                            <div class="featured-info" >
+                                    <p><strong>${i.name}</strong></p>
+                                    <p><strong>${i.address}</strong> </p>
+                                    <p>${i.short_desc.replace(/\n/g, "<br />")}</p>
+                                <button class="hostel-button" onclick="accommodationDetail(${i.id})"><a>View More</a></button>
+                            </div>
+                        </div>
+                    `
+                    html += featuredItem
+                }
+            return html   
+        } 
+
+        function accommodationDetail(pk){
+            url = `{% url 'staud:accommodation_detail' pk=12345 %}`.replace(/12345/, pk.toString());
+            window.location.href = url
+        }
+
+        function featuredStaud(){
+            let url = "{% url 'index:home' %}";
+            fetch(url)
+            .then((resp) => resp.json())
+            .then(function(data){
+                let list = data
+                populateSelect(list, 'accommodation_type')
+                populateSelect(list, 'campus') 
+                populateSelect(list, 'price')
+
+                let f_stauds = sliceIntoChunks(data.featured_staud, 4)
+                let N = 0
+                let featuredCon = document.getElementById("featured-container")
+                featuredStaudHtml(f_stauds, N, featuredCon)
+                btn = document.getElementById("nextpage")
+                btn.addEventListener("click", (e)=>{
+                    e.preventDefault();
+                    N+=1;
+                    if (f_stauds[N] === undefined){
+                        N = 0;
+                    };
+                    let html = featuredSTDHtml(f_stauds, N);
+                    $("#featured-container").fadeOut(400,function(){
+                        $(this).html(html).fadeIn();  
+                    });
+                })
+            })
+        }
+        featuredStaud()
+        </script>
+    </body>
+</html>

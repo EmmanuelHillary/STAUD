@@ -1,0 +1,348 @@
+/*screen size for smaller laptops*/
+@media(max-width: 1124px){
+.pop-picture{
+      width: 300px;
+      height: 400px;
+}
+#subscribe{
+      height: 400px;
+ }
+#subscribe h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+#subscribe p{
+    font-family: Montserrat;
+    font-size: 15px;
+    width: 400px;
+    margin-bottom: 20px;
+}
+.eaddress{
+    padding: 15px;
+    width: 400px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.submit{
+    padding: 15px;
+    width: 400px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+#navigation{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.search-box h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.search-area{
+    padding: 12px;
+    padding-left: 30px;
+    width: 90%;
+}
+#background{
+    padding: 50px;
+}
+.newform select {
+    padding: 0px 20px;
+    font-size: 15px;
+}
+.input-area img{
+    position: absolute;
+    left: 30px;
+}
+.types{
+    width: 150px;
+}
+#partners{
+    padding: 40px;
+}
+.comps1{
+    width: 100px;
+    height: 100px;
+}
+.comps2, .comps3{
+    width: 120px;
+    height: 80px;
+}
+.comps4{
+    width: 130px;
+    height: 30px;
+}
+.comps5{
+    width: 130px;
+    height: 60px;
+}
+#welcome{
+    padding: 20px;
+}
+#welcome h1{
+    font-size: 50px;
+}
+#welcome p{
+    font-size: 20px;
+}
+#how-it-works{
+    padding: 20px;
+}
+.pic-works{
+    width: 450px;
+    height: 450px;
+}
+#details h3{
+    font-size: 40px;
+}
+#details p{
+    font-size: 20px;
+}
+#reg-details{
+    font-size: 20px;
+}
+}
+/*screen size for tablets*/
+@media(max-width: 868px){
+    .pop-picture{
+        width: 250px;
+        height: 300px;
+  }
+  #subscribe{
+        height: 300px;
+   }
+  #subscribe h2{
+      font-size: 25px;
+      margin-bottom: 10px;
+  }
+  #subscribe p{
+      font-family: Montserrat;
+      font-size: 13px;
+      width: 300px;
+      margin-bottom: 10px;
+  }
+  .eaddress{
+      padding: 10px;
+      width: 300px;
+      margin-bottom: 10px;
+      font-size: 13px;
+  }
+  .submit{
+      padding: 10px;
+      width: 300px;
+      margin-bottom: 10px;
+      font-size: 12px;
+  }
+  .search-area{
+      padding: 10px;
+      padding-left: 30px;
+      width: 90%;
+  }
+  .search-box h2{
+    font-size: 27px;
+    margin-bottom: 15px;
+  }
+  .input-area img{
+      position: absolute;
+      left: 25px;
+      top: 14px;
+  }
+  .newform select {
+    padding: 0px 15px;
+    font-size: 13px;
+}
+  .types{
+      width: 120px;
+  }
+  .part-text h2{
+    font-size: 27px;
+}
+.part-text p{
+    font-size: 16px;
+}
+  .comps1{
+      width: 80px;
+      height: 80px;
+  }
+  .comps2, .comps3{
+      width: 100px;
+      height: 70px;
+  }
+  .comps4{
+      width: 100px;
+      height: 20px;
+  }
+  .comps5{
+      width: 100px;
+      height: 40px;
+  }
+  #featured h2{
+    font-size: 27px;
+}
+  #welcome h1{
+      font-size: 32px;
+  }
+  #welcome p{
+      font-size: 18px;
+  }
+  #how-it-works{
+      display: block;
+  }
+  .pic-works{
+      display: none;
+  }
+  #details h3{
+      font-size: 32px;
+  }
+  #details p{
+      font-size: 18px;
+  }
+  .footer-img, #horizantal-line{
+      display: none;
+  }
+  #site-details{
+      display: block;
+  }
+  #footer-links{
+      justify-content: center;
+      width: 100%;
+  }
+}
+/*screen size for smaller tablets*/
+@media(max-width: 700px){
+    .pop-picture{
+      display: none;
+    }
+  #subscribe{
+    border-radius: 40px;
+   }
+   .options{
+        flex-direction: column;
+    }
+    .newform select {
+        width: 100%;
+    }
+    .search-box{
+        width: 80%;
+        padding: 30px;
+     
+    }
+    #welcome h1{
+        font-size: 27px;
+    }
+    #welcome p{
+        font-size: 16px;
+    }
+    #details h3{
+        font-size: 27px;
+    }
+    #details p{
+        font-size: 16px;
+    }
+    .newform select {
+        padding: 0px 15px;
+        font-size: 13px;
+    }
+    #companies{
+        flex-direction: column;
+    }
+  .comps1{
+      width: 160px;
+      height: 160px;
+  }
+  .comps2, .comps3{
+      width: 160px;
+      height: 130px;
+  }
+  .comps4{
+      width: 250px;
+      height: 65px;
+  }
+  .comps5{
+      width: 250px;
+      height: 110px;
+  }
+  .featured-items{
+      flex-direction: column;
+  }
+  .featured-items p{
+    text-align: center;
+}
+.link-sections h4{
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+.link-sections a{
+    font-size: 14px;
+}
+#background{
+    padding: 0px;
+}
+
+}
+
+/*screen size for mobile phones*/
+@media(max-width: 500px){
+    .search-box{
+        width: 100%;
+        padding: 20px;
+    }
+    .input-area img{
+        position: absolute;
+        left: 22px;
+    }
+    #navigation{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #subscribe p{
+        width: 200px;
+    }
+    .eaddress{
+        width: 200px;
+    }
+    .submit{
+        width: 200px;
+    }
+ 
+#search-form{
+    width: 100%;
+    margin: auto;
+}
+.link-sections{
+    padding: 15px;
+}
+.link-sections h4{
+    font-size: 15px;
+}
+.link-sections a{
+    font-size: 13px;
+}
+#copyright{
+    font-size: 10px;
+}
+#social-links img{
+    height: 15px;
+    width: 15px;  
+}
+#social-links a{
+    padding: 5px;
+}
+.image-f{
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+}
+#end-of-page{
+    padding: 15px;
+}
+}
+
+/*for special screens*/
+@media(max-width: 991px){
+  #hidden-link{
+      display: block;
+  }
+  #register{
+      display: none;
+  }
+}

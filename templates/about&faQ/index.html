@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>STAUD ● About Us</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{% static 'about&faQ/js/jquery-3.4.1.js' %}"></script>
+        <link href="{% static 'about&faQ/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'about&faQ/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <link href="{% static 'about&faQ/css/about&faQdes.css' %}" rel="stylesheet">
+        <link href="{% static 'about&faQ/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'about&faQ/js/about&faQ.js' %}"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+ 
+        <section id="main">
+                      <nav class="navbar navbar-expand-lg" id="navigation">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                              <img src="{% static 'home/images/hamburger.png' %}">
+                            </button>
+                          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav nav-wrapper ms-auto">
+                                <a class="nav-link active" href="{% url 'staud:apartments' %}">Houses</a>
+                                <a class="nav-link" href="{% url 'staud:hostels' %}">Hostels</a>
+                                <a class="nav-link" href="{% url 'staud:company' %}">Companies</a>
+                                <a class="nav-link" href="{% url 'staud:order' %}">Orders</a>
+                                <a class="nav-link" href="#">Blog</a>
+                                <a class="nav-link" href="{% url 'staud:login' %}" style="color: #0B407A;">Sign In</a>
+                                <a class="nav-link" href="{% url 'staud:register' %}" style="color: #F68920;" id="hidden-link">Register</a>
+                              </div>
+                          </div>
+                        </div>
+                      </nav>
+                      <section class="info">
+                        <h1>About us</h1>
+                      </section>
+                      <section id="center-logo">
+                          <img src="{% static 'home/images/footer-logo.png' %}">
+                      </section>
+
+                      <section class="privacy">
+                          <div id="infom">
+                            <h5>WHO WE ARE</h5>
+                            <p>Staud is the leading real estate property center platform in Nigeria. With a web-based platform for property rentals and sales, we provide users with the best property search experience both online and offline by connecting them with legitimate and verified real estate agents. In the Nigerian property market, with over 60,000 property listings which include properties like homes, houses, lands, shops, office spaces and other commercial properties, small, medium and large-scale real estate companies in Nigeria who desire to scale up the sales and rentals of their properties can partner with Staud. It is founded by Kaduru George and Adebowale Paul.</p>
+                            <h5>OUR VISION</h5>
+                            <p>Here at Staud, we hope to make finding accommodation for students super easy and stress free. We hope to make our clients find a place they can call home at the best and most affordable prices. We hope to be the nation’s leading real estate online agency. We hope to be the best in what we do.</p>
+                            <h5>OUR MISSION</h5>
+                            <p>We are the nation’s leading real estate firm, we deal with all kinds of student accommodations, right from on campus to off campuses. Our mission with this is be the number 1 stop point for every  university student anywhere in the country when it comes to finding accomodation</p>
+                       </div>
+                         </div>
+                 
+                         <div class="terms">
+                             <h3>Frequently asked questions</h3>
+                         </div>
+                         <div class="orders2">
+                            <div class="one"> 
+                                <h3>1. About Staud</h3>
+                                <div class="question">
+                                 <p class="quest">Q.  Is Staud an Estate Agency?</p>
+                                 <p class="answer">A.  Staud is not an estate agency but a digital product providing tertiary students with easy access to accomdation by connecting them with agencies, property owners and developers</p>
+                                </div>
+                 
+                                <div class="question">
+                                 <p  class="quest">Q.  Is there a Staud App?</p>
+                                 <p class="answer">A.  Staud strives to bring ease and functionality in contrast to the known struggle to get accommodation in universities, thus a mobile application is only inevitable to accomplish our mission and goals, but as at now, Staud is only operational as a web application  </p>
+                                </div>
+                 
+                                <div class="question">
+                             <p  class="quest">Q. Can a student join the Staud Network?</p>
+                             <p class="answer">A. Staud is a vast growing network and community comprising of skilled and ambitious individuals, students included.</p>
+                                </div>
+                            
+                                <div class="one"> 
+                                 <h3>   2.  Website Function</h3>
+                                 <div class="question">
+                                  <p class="quest">    Q.  Do I need to pay for accommodation through the website?</p>
+                                  <p class="answer">A.  Staud does not require you to pay for any property through our website, for now we connect you to property dealers whom you can contact</p>
+                                 </div>
+                  
+                                 <div class="question">
+                                  <p  class="quest">   Q.  Is Staud Website secure?</p>
+                                  <p class="answer">     A.  As an effective digital product designed to serve students from tertiary institutions, safety and security is an important virtue for us and we keep to it. The Staud website is well designed and optimized to prevent security breach of any kind with our team of tech support engineers working round the clock, this we assure you, you are safe with Staud</p>
+                                 </div>
+                                 </div>
+                 
+                                 <div class="one"> 
+                                     <h3>  3. Agents/Developer Info</h3>
+                                     <div class="question">
+                                      <p class="quest">   Q.  Can I trust the agents with property listings through Staud?</p>
+                                      <p class="answer">     A.  Be rest assured that every agent and dealer on the Staud network is properly verified and assured by us, your trust in us is our trust in them</p>
+                                     </div>
+                                     </div>
+                 
+                                     <div class="one"> 
+                                         <h3>   4.   Staud Community </h3>
+                                         <div class="question">
+                                          <p class="quest">   Q.  Do I get paid for working as a Staud blogger</p>
+                                          <p class="answer">  A.  Staud not only connects Students to accommodation opportunities, we alsoreward student bloggers in our community, every week, the blogger with the most read article receives payment, join the community to find out more </p>
+                                         </div>
+                                         </div>
+                 
+                                         <div class="one"> 
+                                             <h3> 5.   Staud Listings</h3>
+                                             <div class="question">
+                                              <p class="quest">   Q.  Are the listings on Staud website legitimate in all details</p>
+                                              <p class="answer">  A.  Transparency is an upstanding virtue of Staud, we ensure that agents and details provide accurate information of listing, we have a team of consultants who confirm listings posted, what you see is really what you get </p>
+                                             </div>
+                                             </div>
+                 
+                                             <div class="one"> 
+                                                 <h3> 6.  Staud Orders</h3>
+                                                 <div class="question">
+                                                  <p class="quest">  Q.  How do orders on Staud work?</p>
+                                                  <p class="answer">    A.  On the staud website is a feature known as Orders. In the orders page, you are able to give a detailed 
+                                                     description of a certain accommodation which you are in search of and currently isn't available in our listings, once available we will send you a mail indicating the update </p>
+                                                 </div>
+                                                 </div>
+                      </section>
+
+        <section id="welcome">
+            <h1>Staud welcome</h1>
+            <p>Staud is a digital real estate product focused on university students, it is simply the solution to every students' accommodation needs.</p>
+            <p>We understand the headache that <strong>YOU</strong> go through, finding the best place to live for the school session, being exposed to fraud or scams and your dissatisfaction on renting a home.</p>
+            <p>We are here to bring an <strong>END</strong> to that, to offer you the <strong>BEST</strong> secure deals, all in one place!</p>
+        </section>
+
+        <section id="how-it-works">
+            <div id="details">
+                <h3>How staud works</h3>
+                <p><a style="color: #F68920;">GetStaud.com</a> helps you find the home you need for school without stress or worry.</p>
+                <p>Step1: Visit GetStaud.com </p>
+                <p>Step2: Search for your dream home</p>
+                <p>Step3: Contact agent for inspection</p>
+                <p>Step4: Pay and move into your Staud</p>
+            </div>
+            <div id="pic-details">
+                <img src="{% static 'home/images/how-it-works.png' %}" class="pic-works">
+            </div>
+        </section>
+
+        <section id="register">
+            <div id="reg-details">Are you a developer or agent? List your properties with us!</div>
+            <div id="reg-button"><a href="{% url 'staud:register' %}"><button>Register</button></a></div>
+        </section>
+        
+        <div id="horizantal-line"></div>
+
+        <section id="site-details">
+            <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+            <div id="footer-links">
+                <div class="link-sections">
+                    <h4>Discovery</h4>
+                    <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                    <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                    <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>About</h4>
+                    <!-- <p><a href="#">Help</a></p> -->
+                    <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                    <p><a href="{% url 'staud:company' %}">Partners</a></p>
+                </div>
+                <div class="link-sections">
+                    <h4>Info</h4>
+                    <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                    <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                    <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <section id="end-of-page">
+            <div id="copyright">©Staud All Rights Reserved</div>
+            <div id="social-links">
+                <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+            </div>
+        </section>
+        </footer>            
+
+    </body>
+</html>

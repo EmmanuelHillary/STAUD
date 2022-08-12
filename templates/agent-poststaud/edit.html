@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit a STAUD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'agent-poststaud/css/poststauddes.css' %}" rel="stylesheet">
+        <script src="{% static 'agent-poststaud/js/jquery-3.4.1.js' %}"></script>
+        <link href="{% static 'agent-poststaud/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'agent-poststaud/js/bootstrap.min.js' %}"></script>
+        <link href="{% static 'agent-poststaud/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'agent-poststaud/js/poststaud.js' %}"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            .input{
+                outline: none !important;
+                border-color: 0 0 10px red;
+                box-shadow: 0 0 10px #ff0000;
+                
+            }
+            .bd-example-modal-lg .modal-dialog{
+                display: table;
+                position: relative;
+                margin: 0 auto;
+                top: calc(50% - 24px);
+            }
+
+            .bd-example-modal-lg .modal-dialog .modal-content{
+                background-color: transparent;
+                border: none;
+            }
+        </style>
+        <div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content" style="width: 48px">
+                    <span class="fa fa-spinner fa-spin fa-3x" style="color: #F68920;"></span>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg" id="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <img src="{% static 'home/images/hamburger.png' %}">
+                </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-wrapper ms-auto">
+                    <a class="iconn" href="{% url 'staud:agent_dashboard' request.user.username %}">Dashboard</a>
+                    <a class="iconn" href="{% url 'staud:agent_poststaud' request.user.username %}">Post a Staud</a>
+                    <a class="iconn" href="{% url 'staud:agent_listings' request.user.username %}">My Listings</a>
+                    <a class="iconn" href="{% url 'staud:agent_profile' request.user.username %}">My Profile</a>
+                  <a class="nav-link" href="#" style="color: #0B407A;">Log out</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+         
+      <div id="main">
+        <div id="left">
+            <div id="heading">
+                <div id="hide">   
+                    <div id ="draw">
+                </div>
+            </div>
+               
+            <ul class="un-list">
+                <a href="{% url 'staud:agent_dashboard' request.user.username %}"><button ><li>Dashboard <img src="{% static 'agent-poststaud/images/sidebar-images/Vector.png' %}" style="margin-left: 30px;" class="icons"></li></button></a>
+                <a href="{% url 'staud:agent_poststaud' request.user.username %}"><button class="back"><li>Post a Staud <img src="{% static 'agent-poststaud/images/sidebar-images/Vector (1).png' %}"  style="margin-left: 30px;" class="icons"></li></button></a>
+                 <a href="{% url 'staud:agent_listings' request.user.username %}"><button><li>My Listings <img src="{% static 'agent-poststaud/images/sidebar-images/Vector (2).png' %}"  style="margin-left: 30px;" class="icons"></li></button></a>
+                  <a href="{% url 'staud:agent_profile' request.user.username %}"><button><li>My Profile <img src="{% static 'agent-poststaud/images/sidebar-images/Vector (3).png' %}"  style="margin-left: 30px;" class="icons"></li></button></a>
+            </ul>
+          </div>
+          </div>
+          <div id="right">
+            
+            <div id="heading2">
+                <h2>Edit a Staud</h2>
+            </div>
+            <button type="button" id="delete" class="btn btn-danger btn-lg btn-block" style="margin-bottom: 10px;">Delete</button>
+            <form id="formed" enctype="multipart/form-data">
+                <div id="background">
+                <div class="newforms " data-width="auto">
+                    <label for="types">Property Title</label>
+                    <br>
+                    <select id="property_name" name="property_name" onchange="update_acc()" class="area" >
+                        <option value="" disabled selected>Select An Accommodation</option>
+                        <option value="Add" style="color: #F68920;" id="AddNew">+Add New Accommodation</option>
+                        
+                    </select>
+                </div>
+                <div id="flex1">
+                    <div class="newform" data-width="auto">
+                        <label for="accommodation_type">Type</label>
+                        <br>
+                        <select id="accommodation_type" class="types" name="accommodation_type" >
+                            
+                        </select>
+                    </div>
+                    <div class="newform" data-width="auto">
+                        <label for="campus">Campus</label>
+                        <br>
+                        <select id="campus"  class="types" name="campus" >
+                            
+                        </select>
+                    </div>
+                        <div class="newform " data-width="auto">
+                            <label for="room_size">Room size</label>
+                            <br>
+                            <select id="room_size" class="types" name="room_size" >
+                                
+                            </select>
+                        </div>
+                        <div class="newform" data-width="auto">
+                            <label for="furnished">Furnished</label>
+                            <br>
+                            <select class="types" id="furnished" name="furnished" >
+                                
+                            </select>
+                        </div>
+                        <div class="newform" data-width="auto">
+                            <label for="sex">Sex</label>
+                            <br>
+                            <select class="types" id="sex" name="sex" >
+                                
+                            </select>
+                        </div>
+                        <div class="newform" data-width="auto">
+                            <label for="market_status">Market Status</label>
+                            <br>
+                            <select class="types" id="market_status" name="market_status" >
+                                
+                            </select>
+                        </div>
+                        <div class="newform" style="display: hidden;" data-width="auto">
+                           
+                            <div class="types" style="display: hidden; border-color: white;" >
+
+                            </div>
+                            
+                        </div>
+                </div>
+            
+                    
+           
+            <div id="flex2">
+                <div class="newform" data-width="auto">
+                    <label for="price">Property Address</label>
+                    <br>
+                    <input type="text" placeholder="e.g Liadi Agoro streets" class="typez" id="address" name="address" >
+                </div>
+                <div class="newform" data-width="auto">
+                    <label for="price">Price per annum</label>
+                    <br>
+                    <input type="number" id="price" placeholder="Enter Amount" name="price" class="typed" >
+                    
+                </div>
+            </div>
+            <div id="textbox">
+                <label>Property Description (short)</label>
+                <br>
+                <textarea placeholder="Describe your property in a short detail e.g
+2 man room - N400,000 per/annum
+4 man room - N280,000 per/annum
+6 man room - N150,000 per/annum " style="height: 150px;" name="short_description" id="short_description"></textarea>
+                <label>Property Description (full)</label>
+                <br>
+                <textarea placeholder="Describe your property in detail" id="full_description" name="full_description" ></textarea>
+            </div>
+        
+            <div id="secdetails">
+                <div class="lab">Select Features</div>
+                <div id="flex4">
+                <div class="checkkk">
+                <label class="container">Reliable Electricity
+                    <input type="checkbox" value="Reliable Electricity" name="features" id="features">
+                    <span class="checkmark" ></span>
+                </label>
+            </div>
+                  
+            <div class="checkkk">
+                <label class="container">Security
+                    <input type="checkbox" value="Security" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+                  
+            <div class="checkkk">
+                <label class="container">All room Ensuite
+                    <input type="checkbox" value="All room Ensuite" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Relaxation Lounge
+                    <input type="checkbox" value="Relaxation Lounge" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Access to market
+                    <input type="checkbox" value="Access to market" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Parking space
+                    <input type="checkbox" value="Parking space" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Installmental payment
+                    <input type="checkbox" value="Installmental payment" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Student friendly price
+                    <input type="checkbox" value="Student friendly price" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk" onclick="click()">
+                <label class="container">Close to campus
+                    <input type="checkbox" value="Close to campus" name="features" id="features">
+                    <span class="checkmark" ></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Serviced
+                    <input type="checkbox" value="Serviced" name="features"  id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                <label class="container">Cleaning Service
+                    <input type="checkbox" value="Cleaning Service" name="features" id="features">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkkk">
+                
+            </div>
+          
+        </div>
+        </div>
+    
+            <div id="upload">
+                <h3>Upload pictures</h3>
+                <div id="paragraph">
+                <h4><img src="{% static 'agent-poststaud/images/other-icons/info.png' %}" class="info-image">Note</h4>
+                <p>Please be informed that pictures uploaded must be well visible and of resolution 400*300 for the best fit on our system, the first image selected will be the cover picture for the property</p>
+            </div>
+                </div>
+                <div class="upload-form">
+                    <input type="file"  name="images" id="file" onchange="preview()" class="inputfile" multiple />
+
+                    <!-- The magic that makes it work -->
+                    <label for="file" id="file-label">
+                        <div><img src="{% static 'agent-poststaud/images/other-icons/upload.png' %}"></div>
+                        <div>Click to upload</div>
+                    </label>
+                    <br>
+                    <div id="selected-images">
+                        <!-- <div class="selected"><img src="{% static 'agent-poststaud/images/hostels/1.png' %}"></div>
+                        <div class="selected"><img src="{% static 'agent-poststaud/images/hostels/2.png' %}" ></div>
+                        <div class="selected"><img src="{% static 'agent-poststaud/images/hostels/3.png' %}"></div>
+                        <div class="selected"><img src="{% static 'agent-poststaud/images/hostels/4.png' %}"></div> -->
+                    </div>
+                <div id="searchh">
+                    <input type="submit" value="submit" name="Submit" class="last">
+                </div>
+            </form>
+            </div>
+               
+       
+            
+            </div>
+          </div>
+      </div>
+      
+    
+    <div id="horizantal-line"></div>
+
+    <section id="site-details">
+        <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+        <div id="footer-links">
+            <div class="link-sections">
+                <h4>Discovery</h4>
+                <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+            </div>
+            <div class="link-sections">
+                <h4>About</h4>
+                <!-- <p><a href="#">Help</a></p> -->
+                <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                <p><a href="{% url 'staud:company' %}">Partners</a></p>
+            </div>
+            <div class="link-sections">
+                <h4>Info</h4>
+                <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section id="end-of-page">
+        <div id="copyright">©Staud All Rights Reserved</div>
+        <div id="social-links">
+            <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+        </div>
+    </section>
+    </footer>
+    <script>
+        let newformsInnerHTML;
+        let pageUrl = window.location.href
+        var pk = pageUrl.match(/\/edit-staud\/(\d+)\//)[1];
+        var username = pageUrl.match(/\/dashboard\/(.*?)\//)[1];
+        let error403 = `
+                        <style>
+                            .clearfix:before,
+                            .clearfix:after {
+                                display: table;
+
+                                content: ' ';
+                            }
+                            .clearfix:after {
+                                clear: both;
+                            }
+                            body {
+                                background: #f0f0f0 !important;
+                            }
+                            .page-404 .outer {
+                                position: absolute;
+                                top: 0;
+
+                                display: table;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                            .page-404 .outer .middle {
+                                display: table-cell;
+
+                                vertical-align: middle;
+                            }
+                            .page-404 .outer .middle .inner {
+                                width: 300px;
+                                margin-right: auto;
+                                margin-left: auto;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle {
+                                height: 300px;
+
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover i {
+                                color: #39bbdb!important;
+                                background-color: #f5f5f5;
+                                box-shadow: 0 0 0 15px #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover span {
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle i {
+                                font-size: 5em;
+                                line-height: 1em;
+
+                                float: right;
+
+                                width: 1.6em;
+                                height: 1.6em;
+                                margin-top: -.7em;
+                                margin-right: -.5em;
+                                padding: 20px;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #f5f5f5!important;
+                                border-radius: 50%;
+                                background-color: #39bbdb;
+                                box-shadow: 0 0 0 15px #f0f0f0;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle span {
+                                font-size: 11em;
+                                font-weight: 700;
+                                line-height: 1.2em;
+
+                                display: block;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #e0e0e0;
+                            }
+                            .page-404 .outer .middle .inner .inner-status {
+                                font-size: 20px;
+
+                                display: block;
+
+                                margin-top: 20px;
+                                margin-bottom: 5px;
+
+                                text-align: center;
+
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-detail {
+                                line-height: 1.4em;
+
+                                display: block;
+
+                                margin-bottom: 10px;
+
+                                text-align: center;
+
+                                color: #999999;
+                            }    
+                        </style>
+                        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+                        <div class="page-404">
+                            <div class="outer">
+                                <div class="middle">
+                                    <div class="inner">
+                                        <!--BEGIN CONTENT-->
+                                        <div class="inner-circle"><i class="fa fa-cogs"></i><span>403</span></div>
+                                        <span class="inner-status">Unauthorised Access!</span>
+                                        <span class="inner-detail">You are not allowed in here</span>
+                                        <!--END CONTENT-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+        let error500 =  `
+                        <style>
+                            .clearfix:before,
+                            .clearfix:after {
+                                display: table;
+
+                                content: ' ';
+                            }
+                            .clearfix:after {
+                                clear: both;
+                            }
+                            body {
+                                background: #f0f0f0 !important;
+                            }
+                            .page-404 .outer {
+                                position: absolute;
+                                top: 0;
+
+                                display: table;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                            .page-404 .outer .middle {
+                                display: table-cell;
+
+                                vertical-align: middle;
+                            }
+                            .page-404 .outer .middle .inner {
+                                width: 300px;
+                                margin-right: auto;
+                                margin-left: auto;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle {
+                                height: 300px;
+
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover i {
+                                color: #39bbdb!important;
+                                background-color: #f5f5f5;
+                                box-shadow: 0 0 0 15px #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover span {
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle i {
+                                font-size: 5em;
+                                line-height: 1em;
+
+                                float: right;
+
+                                width: 1.6em;
+                                height: 1.6em;
+                                margin-top: -.7em;
+                                margin-right: -.5em;
+                                padding: 20px;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #f5f5f5!important;
+                                border-radius: 50%;
+                                background-color: #39bbdb;
+                                box-shadow: 0 0 0 15px #f0f0f0;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle span {
+                                font-size: 11em;
+                                font-weight: 700;
+                                line-height: 1.2em;
+
+                                display: block;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #e0e0e0;
+                            }
+                            .page-404 .outer .middle .inner .inner-status {
+                                font-size: 20px;
+
+                                display: block;
+
+                                margin-top: 20px;
+                                margin-bottom: 5px;
+
+                                text-align: center;
+
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-detail {
+                                line-height: 1.4em;
+
+                                display: block;
+
+                                margin-bottom: 10px;
+
+                                text-align: center;
+
+                                color: #999999;
+                            }    
+                        </style>
+                        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+                        <div class="page-404">
+                            <div class="outer">
+                                <div class="middle">
+                                    <div class="inner">
+                                        <!--BEGIN CONTENT-->
+                                        <div class="inner-circle"><i class="fa fa-cogs"></i><span>500</span></div>
+                                        <span class="inner-status">Opps! Internal Server Error!</span>
+                                        <span class="inner-detail">Unfortunately we're having trouble loading the page you are looking for. Please come back in a while.</span>
+                                        <!--END CONTENT-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+        let url = "{% url 'accommodation:edit' username=4567 pk=1234 %}".replace(/4567/, username.toString()).replace(/1234/, pk.toString());
+        let imageInput = document.getElementById("file")
+        let imageContainer = document.getElementById("selected-images")
+        let images = new FormData();
+        function modal(){
+                $('.modal').modal('show');
+            }
+        function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function objectifyForm(formArray) {
+                //serialize data function
+                var returnArray = {};
+                for (var i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            }
+
+            for (let i = 0; i < imageInput.files.length; i++) {
+                formData.append('filename', data[i]);
+            }
+            
+            function preview(){
+                imageContainer.innerHTML = "";
+                for (let i of imageInput.files){
+                    let reader = new FileReader();
+                    reader.onload = () =>{
+                        imageContainer.innerHTML += `
+                        <div class="selected" id="img-upload"><img src="${reader.result}"></div>
+                        `
+                    }
+                    reader.readAsDataURL(i);
+                }
+            }
+
+            const csrftoken = getCookie('csrftoken');
+        $("#formed").submit(function(e){
+                e.preventDefault();
+                modal()
+                let submit = true
+                if(submit){
+                    let serialize = new FormData(this)
+                    $.ajax({
+                    url: url,
+                    data: serialize,
+                    type: "POST",
+                    headers:{"X-CSRFToken": csrftoken},
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        window.location.href = `{% url 'staud:agent_listings' username=1234 %}`.replace(/1234/, username)
+                        $('.modal').modal('hide');
+                    },
+                    error:function(XMLHttpRequest, textStatus, errorThrown){
+                    if (XMLHttpRequest.status === 403){
+                        document.body.innerHTML = error403
+                        $('.modal').modal('hide');
+                    }
+                    if (XMLHttpRequest.status === 500){
+                        document.body.innerHTML = error500
+                        $('.modal').modal('hide');
+                    }
+                }
+                    });
+                }
+        });    
+        $("#delete").click(function(e){
+                e.preventDefault();
+                let deleteUrl = "{% url 'accommodation:delete' username=4567 pk=1234 %}".replace(/4567/, username.toString()).replace(/1234/, pk.toString());
+
+                $.ajax({
+                url: deleteUrl,
+                headers:{"X-CSRFToken": csrftoken},
+                type: "POST",
+                success: function (data) {
+                    window.location.href = `{% url 'staud:agent_dashboard' username=1234 %}`.replace(/1234/, username)
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    if (XMLHttpRequest.status === 403){
+                        document.body.innerHTML = error403
+                    }
+                    if (XMLHttpRequest.status === 500){
+                        document.body.innerHTML = error500
+                    }
+                }
+                });
+                
+        });    
+        function selectStaud(){
+            document.querySelector('.newforms').innerHTML = newformsInnerHTML
+        }
+        function update_acc() {
+            var selectedOption = document.getElementById("property_name"); 
+            if (selectedOption.value === "Add") {
+                newformsInnerHTML = document.querySelector('.newforms').innerHTML
+                document.querySelector('.newforms').innerHTML = `
+                <label for="types">Property Title</label>
+                    <br>
+                <input type="text" placeholder="e.g Testimony hostels" name="property_name" class="area">
+                <a href="#" onclick="selectStaud(event)" style="color: #F68920; text-decoration: none;">Select a STAUD</a>
+                `
+            }
+        }
+        function populateSelect(data, value){
+            for(let i of data[`${value}`]){
+                var newSelect = document.createElement('option');
+                selectHTML = "<option value='" + i + "'>" + i + "</option>";
+                newSelect.innerHTML = selectHTML;
+                document.getElementById(`${value}`).add(newSelect);
+                }
+        }
+        function selectValue(id, data){
+            $(`#${id}`).val(data).change();
+        }
+        function populateSelectSibling(data, value, sibling){
+            for(let i of data[`${value}`]){
+                selectHTML = "<option value='" + i + "'>" + i + "</option>";
+                document.getElementById(sibling).insertAdjacentHTML("afterend", selectHTML) 
+                }
+        }
+        $.ajax({
+                url: url,
+                success: function (data) {
+                    property_data = data.accommodation
+                    populateSelect(data, 'accommodation_type')
+                    populateSelect(data, 'campus') 
+                    populateSelect(data, 'sex')
+                    populateSelect(data, 'room_size') 
+                    populateSelect(data, 'furnished')
+                    populateSelect(data, 'market_status')
+                    populateSelectSibling(property_data, "property_name", "AddNew")
+
+                    selectValue("property_name", data.accommodation.name)
+                    selectValue("accommodation_type", data.accommodation.acc_type)
+                    selectValue("market_status", data.accommodation.market_status)
+                    selectValue("campus", data.accommodation.campus)
+                    selectValue("sex", data.accommodation.sex)
+                    selectValue("room_size", data.accommodation.room_size)
+                    selectValue("furnished", data.accommodation.furnished)
+
+                    selectValue("address", data.accommodation.address)
+                    selectValue("price", data.accommodation.price)
+                    selectValue("short_description", data.accommodation.short_desc)
+                    selectValue("full_description", data.accommodation.full_description)
+                    if(data.accommodation.top_features){
+                        for (let feature of document.querySelectorAll("#features")){
+                            if(data.accommodation.top_features.includes(feature.value)){
+                                feature.checked = true
+                            }
+                        }
+                    }
+                    if(data.accommodation.images){
+                        for (let image of data.accommodation.images){
+                            imageContainer.innerHTML += `
+                        <div class="selected" id="img-upload"><img src="${image}"></div>
+                        `
+                        }
+                    }
+
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    if (XMLHttpRequest.status === 403){
+                        document.body.innerHTML = error403
+                    }
+                    if (XMLHttpRequest.status === 500){
+                        document.body.innerHTML = error500
+                    }
+                }
+                });
+                
+    </script>   
+    </body>
+    </html>
+    
+    
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'agent-dashboard/css/dashboarddes.css' %}" rel="stylesheet">
+        <script src="{% static 'agent-dashboard/js/jquery-3.4.1.js' %}"></script>
+        <link href="{% static 'agent-dashboard/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'agent-dashboard/js/bootstrap.min.js' %}"></script>
+        <link href="{% static 'agent-dashboard/css/mediaquery.css' %}" rel="stylesheet">
+        <script src="{% static 'agent-dashboard/js/dashboard.js' %}"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Montserrat&family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg" id="navigation">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'staud:homepage' %}"><img src="{% static 'home/images/logo.png' %}" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="{% static 'home/images/hamburger.png' %}">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-wrapper ms-auto">
+                    <a class="iconn" href="{% url 'staud:agent_dashboard' request.user.username %}">Dashboard</a>
+                    <a class="iconn" href="{% url 'staud:agent_poststaud' request.user.username %}">Post a Staud</a>
+                    <a class="iconn" href="{% url 'staud:agent_listings' request.user.username %}">My Listings</a>
+                    <a class="iconn" href="{% url 'staud:agent_profile' request.user.username %}">My Profile</a>
+                  <a class="nav-link" href="#" style="color: #0B407A;">Log out</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+         
+      <div id="main">
+        <div id="left">
+            <div id="heading">
+                <div id="hide">   
+                    <div id ="draw">
+                </div>
+            </div>
+               
+            <ul class="un-list">
+                <a href="{% url 'staud:agent_dashboard' request.user.username %}"><button class="back"><li>Dashboard <img src="{% static 'agent-dashboard/images/sidebar-images/Vector.png' %}" style="margin-left: 30px;" class="icons"></li></button></a>
+                <a href="{% url 'staud:agent_poststaud' request.user.username %}"><button><li>Post a Staud <img src="{% static 'agent-dashboard/images/sidebar-images/Vector (1).png' %}"  style="margin-left: 30px;" class="icons"></li></button></a>
+                <a href="{% url 'staud:agent_listings' request.user.username %}"><button><li>My Listings <img src="{% static 'agent-dashboard/images/sidebar-images/Vector (2).png' %}"  style="margin-left: 30px;" class="icons"></li></button></a>
+                <a href="{% url 'staud:agent_profile' request.user.username %}"><button><li>My Profile <img src="{% static 'agent-dashboard/images/sidebar-images/Vector (3).png' %}"  style="margin-left: 30px;" class="icons"></li></button></a>
+            </ul>
+          </div>
+          </div>
+          <div id="right">
+              <div id="intro">
+                <div class="alert alert-danger" id="email-verification" role="alert" style="display: none;">
+                    Your email has not been verified, Please check you email.
+                </div>
+              <h2>Dashboard</h2>
+              <h4 id="name"></h4>
+              <p>Today,</p>
+              <h3 id="date">3 Jan, 2021</h3>
+            </div>
+            <div id="details">
+                <div id="flex1">
+                    <div class="firstdiv">
+                       <div class="seconddiv">
+                           <div><h1>10</h1></div>
+                           <div  class="stats"><p>Phone Clicks</p><span><img src="{% static 'agent-dashboard/images/other-icons/Vector.png' %}">+3%</span></div>
+                       </div>
+                    </div>
+                    <div class="firstdiv">
+                        <div class="seconddiv">
+                            <div><h1>20</h1></div>
+                            <div class="stats"><p>Whatsapp clicks</p><span><img src="{% static 'agent-dashboard/images/other-icons/Vector.png' %}">+3%</span></div>
+                        </div>
+                     </div>
+                     <div class="firstdiv">
+                        <div class="seconddiv">
+                            <div><h1>20</h1></div>
+                            <div  class="stats"><p>Callback clicks</p><span><img src="{% static 'agent-dashboard/images/other-icons/Vector.png' %}">+3%</span></div>
+                        </div>
+                     </div>
+                     <div class="firstdiv">
+                        <div class="seconddiv">
+                            <div><h1>30</h1></div>
+                            <div  class="stats"><p>Enquiries</p><span><img src="{% static 'agent-dashboard/images/other-icons/Vector.png' %}">+3%</span></div>
+                        </div>
+                     </div>
+                     <div class="firstdiv">
+                        <div class="seconddiv">
+                            <div><h1>40</h1></div>
+                            <div  class="stats"><p>Staud views</p><span><img src="{% static 'agent-dashboard/images/other-icons/Vector.png' %}">+3%</span></div>
+                        </div>
+                     </div>
+                    <div class="firstdiv">
+                        <a href="{% url 'staud:agent_poststaud' request.user.username %}"><button id="bigbutton" style="color: white;">Post a staud</button></a>
+                    </div>
+                </div>
+                </div>
+                <div id="stauds">
+                    <h3>Most staud clicks</h3>
+                    <div id="flex3">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+      
+    
+    <div id="horizantal-line"></div>
+
+    <section id="site-details">
+        <div><img src="{% static 'home/images/footer-logo.png' %}" class="footer-img"></div>
+        <div id="footer-links">
+            <div class="link-sections">
+                <h4>Discovery</h4>
+                <p><a href="{% url 'staud:apartments' %}">New Houses</a></p>
+                <p><a href="{% url 'staud:most-searched' %}">Most Searched</a></p>
+                <p><a href="{% url 'staud:most-sold' %}">Most Sold</a></p>
+            </div>
+            <div class="link-sections">
+                <h4>About</h4>
+                <!-- <p><a href="#">Help</a></p> -->
+                <p><a href="{% url 'staud:about-FAQ' %}">FAQ's</a></p>
+                <p><a href="{% url 'staud:company' %}">Partners</a></p>
+            </div>
+            <div class="link-sections">
+                <h4>Info</h4>
+                <p><a href="{% url 'staud:contact-us' %}">Contact Us</a></p> 
+                <p><a href="{% url 'staud:privacy-terms' %}">Privacy Policy</a></p>
+                <p><a href="{% url 'staud:privacy-terms' %}">Terms and Conditions</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section id="end-of-page">
+        <div id="copyright">©Staud All Rights Reserved</div>
+        <div id="social-links">
+            <a href="#"><img src="{% static 'home/images/social-links/instagram.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'home/images/social-links/youtube.png' %}"></a>
+        </div>
+    </section>
+    </footer>
+    
+        <script>
+            let pageUrl = window.location.href
+            var username = pageUrl.match(/\/dashboard\/(.*?)\//)[1];
+            let url = "{% url 'accounts:detail' username=1234 %}".replace(/1234/, username)
+            let error403 = `
+                        <style>
+                            .clearfix:before,
+                            .clearfix:after {
+                                display: table;
+
+                                content: ' ';
+                            }
+                            .clearfix:after {
+                                clear: both;
+                            }
+                            body {
+                                background: #f0f0f0 !important;
+                            }
+                            .page-404 .outer {
+                                position: absolute;
+                                top: 0;
+
+                                display: table;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                            .page-404 .outer .middle {
+                                display: table-cell;
+
+                                vertical-align: middle;
+                            }
+                            .page-404 .outer .middle .inner {
+                                width: 300px;
+                                margin-right: auto;
+                                margin-left: auto;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle {
+                                height: 300px;
+
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover i {
+                                color: #39bbdb!important;
+                                background-color: #f5f5f5;
+                                box-shadow: 0 0 0 15px #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover span {
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle i {
+                                font-size: 5em;
+                                line-height: 1em;
+
+                                float: right;
+
+                                width: 1.6em;
+                                height: 1.6em;
+                                margin-top: -.7em;
+                                margin-right: -.5em;
+                                padding: 20px;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #f5f5f5!important;
+                                border-radius: 50%;
+                                background-color: #39bbdb;
+                                box-shadow: 0 0 0 15px #f0f0f0;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle span {
+                                font-size: 11em;
+                                font-weight: 700;
+                                line-height: 1.2em;
+
+                                display: block;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #e0e0e0;
+                            }
+                            .page-404 .outer .middle .inner .inner-status {
+                                font-size: 20px;
+
+                                display: block;
+
+                                margin-top: 20px;
+                                margin-bottom: 5px;
+
+                                text-align: center;
+
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-detail {
+                                line-height: 1.4em;
+
+                                display: block;
+
+                                margin-bottom: 10px;
+
+                                text-align: center;
+
+                                color: #999999;
+                            }    
+                        </style>
+                        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+                        <div class="page-404">
+                            <div class="outer">
+                                <div class="middle">
+                                    <div class="inner">
+                                        <!--BEGIN CONTENT-->
+                                        <div class="inner-circle"><i class="fa fa-cogs"></i><span>403</span></div>
+                                        <span class="inner-status">Unauthorised Access!</span>
+                                        <span class="inner-detail">You are not allowed in here</span>
+                                        <!--END CONTENT-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+            let error500 =  `
+                        <style>
+                            .clearfix:before,
+                            .clearfix:after {
+                                display: table;
+
+                                content: ' ';
+                            }
+                            .clearfix:after {
+                                clear: both;
+                            }
+                            body {
+                                background: #f0f0f0 !important;
+                            }
+                            .page-404 .outer {
+                                position: absolute;
+                                top: 0;
+
+                                display: table;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                            .page-404 .outer .middle {
+                                display: table-cell;
+
+                                vertical-align: middle;
+                            }
+                            .page-404 .outer .middle .inner {
+                                width: 300px;
+                                margin-right: auto;
+                                margin-left: auto;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle {
+                                height: 300px;
+
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover i {
+                                color: #39bbdb!important;
+                                background-color: #f5f5f5;
+                                box-shadow: 0 0 0 15px #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle:hover span {
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle i {
+                                font-size: 5em;
+                                line-height: 1em;
+
+                                float: right;
+
+                                width: 1.6em;
+                                height: 1.6em;
+                                margin-top: -.7em;
+                                margin-right: -.5em;
+                                padding: 20px;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #f5f5f5!important;
+                                border-radius: 50%;
+                                background-color: #39bbdb;
+                                box-shadow: 0 0 0 15px #f0f0f0;
+                            }
+                            .page-404 .outer .middle .inner .inner-circle span {
+                                font-size: 11em;
+                                font-weight: 700;
+                                line-height: 1.2em;
+
+                                display: block;
+
+                                -webkit-transition: all .4s;
+                                        transition: all .4s;
+                                text-align: center;
+
+                                color: #e0e0e0;
+                            }
+                            .page-404 .outer .middle .inner .inner-status {
+                                font-size: 20px;
+
+                                display: block;
+
+                                margin-top: 20px;
+                                margin-bottom: 5px;
+
+                                text-align: center;
+
+                                color: #39bbdb;
+                            }
+                            .page-404 .outer .middle .inner .inner-detail {
+                                line-height: 1.4em;
+
+                                display: block;
+
+                                margin-bottom: 10px;
+
+                                text-align: center;
+
+                                color: #999999;
+                            }    
+                        </style>
+                        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+                        <div class="page-404">
+                            <div class="outer">
+                                <div class="middle">
+                                    <div class="inner">
+                                        <!--BEGIN CONTENT-->
+                                        <div class="inner-circle"><i class="fa fa-cogs"></i><span>500</span></div>
+                                        <span class="inner-status">Opps! Internal Server Error!</span>
+                                        <span class="inner-detail">Unfortunately we're having trouble loading the page you are looking for. Please come back in a while.</span>
+                                        <!--END CONTENT-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+        
+            function accommodationDetail(pk){
+                url = `{% url 'staud:accommodation_detail' pk=12345 %}`.replace(/12345/, pk.toString());
+                window.location.href = url
+            }
+            function mostStaudClicks (array){
+                    let html = ''
+                    for (let i of array){ 
+                            let featuredItem = `
+                            <div class="homes">
+                            <div class="firimg"><img src="${i.display_picture}"  class="direct"></div>
+                            <div class="text">
+                                <h4> ${i.name}</h4>
+                                <h4 > ${i.address}</h4>
+                                <p>${i.short_desc.replace(/\n/g, "<p>")}</p>
+                            <button class="but" onclick="accommodationDetail(${i.id})">View Staud</button>
+                            </div>
+                            </div>
+                            `
+                            html += featuredItem
+                        }
+                    return html   
+                }
+            $.ajax({
+                    url: url,
+                    success: function (data) {
+                         console.log(data)
+                         if(!data.email_verification){
+                            document.getElementById("email-verification").style.display = 'inline';
+                         }
+
+                         document.getElementById("name").innerHTML = `
+                         <small>Hi</small>, ${data.first_name} ${data.last_name}
+                         `
+                         document.getElementById("date").innerHTML = `
+                         ${data.today}
+                         `
+                         if (data.most_staud_clicks.length === 0){
+                                document.querySelector("#flex3").innerHTML = `<h1>None</h1>`
+                            }
+                        else{
+                            document.getElementById("flex3").innerHTML = mostStaudClicks(data.most_staud_clicks)
+                        }
+                        
+                    },
+                    error:function(XMLHttpRequest, textStatus, errorThrown){
+                    if (XMLHttpRequest.status === 403){
+                        document.body.innerHTML = error403
+                    }
+                    if (XMLHttpRequest.status === 500){
+                        document.body.innerHTML = error500
+                    }
+                }
+                });
+                 
+
+        </script>
+    </body>
+    </html>
+    
+    
+</html>

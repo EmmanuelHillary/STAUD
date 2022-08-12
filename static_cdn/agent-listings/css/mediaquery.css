@@ -1,0 +1,241 @@
+@media(max-width: 1140px){
+    .un-list{
+        padding-left: 0px;
+    }
+    #navigation{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #reg-details{
+        font-size: 20px;
+    }
+    .direct{
+        width: 300px;
+        height: 200px;
+    }
+    
+}
+@media(max-width: 1000px){
+    #main{
+        flex-direction: column;
+    }
+   
+    #flex1{
+        width: 100%;
+    }
+    #left{
+        width: 100%;
+        height: 0;
+    }
+    #right{
+        width: 100%;
+    }
+    .un-list{
+        display: none;
+    }
+    
+    #hide{
+        display: block;
+    }
+
+    #flex3{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .homes{
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       padding: 20px;
+       align-items: center;
+       margin-left: auto;
+       margin-right: auto;
+       width: 100%;
+    }
+    #register{
+      display: none;
+    }
+    
+    }
+    @media(max-width: 990px) {
+        .iconn{
+            display: block;
+        }
+    }
+
+    @media(max-width: 868px) {
+        .footer-img, #horizantal-line{
+            display: none;
+        }
+        #site-details{
+            display: block;
+        }
+        #footer-links{
+            justify-content: center;
+            width: 100%;
+        }
+    
+    }
+
+    @media(max-width: 700px) {
+        .link-sections h4{
+            font-size: 20px;
+            padding-bottom: 8px;
+        }
+        .link-sections a{
+            font-size: 14px;
+        }
+        .seconddiv h1{
+            color: white;
+            font-size: 40px;
+            font-family: Montserrat;
+            font-weight: 600;
+        }
+        #bigbutton{
+            background-color: var(--orange);
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: Montserrat;
+            width: 150px;
+            position: relative;
+            top: 20px;
+        }
+        span{
+            position: relative;
+            bottom: 5px;
+            padding-left: 5px;
+            color: #31D0AA;
+        }
+        #flex1{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            flex-wrap: wrap;
+        }
+        .firstdiv{
+            flex: 0 60%;
+          height: 50px;
+          margin-bottom: 20px;
+          margin-top: 10px;
+          text-align: left;
+          padding-left: 0px;
+          align-items: center;
+        }
+        .homes{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+         }
+         .text{
+            text-align: center;
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+
+    }
+    
+    @media(max-width: 500px){
+        #details h1{
+
+            font-size: 30px;
+        }
+        .direct{
+            width: 250px;
+            height: 150px;
+        }
+        #intro h2{
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        #intro h4{
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            color: var(--blue);
+            padding-top: 5px;
+        }
+        #intro p{
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            padding-top: 5px;
+            margin-bottom: 5px;
+        }
+        #intro h3{
+            font-size: 16px;
+        }
+        #details{
+            background-color: var(--blue);
+            margin: 0px;
+            padding: 10px;
+        }
+        
+        
+        .link-sections{
+            padding: 15px;
+        }
+        .link-sections h4{
+            font-size: 15px;
+        }
+        .link-sections a{
+            font-size: 13px;
+        }
+        #copyright{
+            font-size: 10px;
+        }
+        #social-links img{
+            height: 15px;
+            width: 15px;  
+        }
+        #social-links a{
+            padding: 5px;
+        }
+        .image-f{
+            width: 250px;
+            height: 200px;
+            padding: 10px;
+        }
+        #end-of-page{
+            padding: 15px;
+        }
+        
+        .homes{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f4f4f4;
+            align-items: center;
+            text-align: center;
+         }
+         .homes p{
+            font-size: 13px;
+            text-align: center;
+        }
+        .homes h4{
+            font-size: 13px;
+            text-align: center;
+        }
+    
+        }
+        
+        
+        
+    @media(max-width: 400px){
+    
+        }
+        
+    
+    
+    
+        
+    
+    
+    
+    

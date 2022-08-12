@@ -1,0 +1,154 @@
+/*screen size for smaller laptops*/
+@media(max-width: 1124px){
+
+#navigation{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.info h1{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.privacy{
+    padding: 20px 40px 40px 40px;
+}
+#welcome{
+    padding: 20px;
+}
+#welcome h1{
+    font-size: 50px;
+}
+#welcome p{
+    font-size: 20px;
+}
+#how-it-works{
+    padding: 20px;
+}
+.pic-works{
+    width: 450px;
+    height: 450px;
+}
+#details h3{
+    font-size: 40px;
+}
+#details p{
+    font-size: 20px;
+}
+#reg-details{
+    font-size: 20px;
+}
+}
+/*screen size for tablets*/
+@media(max-width: 868px){
+  #welcome h1{
+      font-size: 32px;
+  }
+  #welcome p{
+      font-size: 18px;
+  }
+  #how-it-works{
+      display: block;
+  }
+  .pic-works{
+      display: none;
+  }
+  #details h3{
+      font-size: 32px;
+  }
+  #details p{
+      font-size: 18px;
+  }
+  .footer-img, #horizantal-line{
+      display: none;
+  }
+  #site-details{
+      display: block;
+  }
+  #footer-links{
+      justify-content: center;
+      width: 100%;
+  }
+}
+/*screen size for smaller tablets*/
+@media(max-width: 700px){
+    .info h1{
+        font-size: 16px;
+    }
+    .privacy h3, .terms h3{
+        font-size: 16px;
+    }
+    .terms-details h5{
+        font-size: 13px;
+    }
+    #infom h5{
+        font-weight: 700;
+        font-size: 13px;
+    }
+    #infom p{
+        font-size: 13px;
+    }
+    ol li{
+        font-size: 13px;
+    }
+    #welcome h1{
+        font-size: 27px;
+    }
+    #welcome p{
+        font-size: 16px;
+    }
+    #details h3{
+        font-size: 27px;
+    }
+    #details p{
+        font-size: 16px;
+  }
+.link-sections h4{
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+.link-sections a{
+    font-size: 14px;
+}
+
+}
+
+/*screen size for mobile phones*/
+@media(max-width: 500px){
+.link-sections{
+    padding: 15px;
+}
+.link-sections h4{
+    font-size: 15px;
+}
+.link-sections a{
+    font-size: 13px;
+}
+#copyright{
+    font-size: 10px;
+}
+#social-links img{
+    height: 15px;
+    width: 15px;  
+}
+#social-links a{
+    padding: 5px;
+}
+.image-f{
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+}
+#end-of-page{
+    padding: 15px;
+}
+}
+
+/*for special screens*/
+@media(max-width: 991px){
+  #hidden-link{
+      display: block;
+  }
+  #register{
+      display: none;
+  }
+}
